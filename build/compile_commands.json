@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/pedro_mint/2DGraphicEngine/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/2DGraphicEngine  -o CMakeFiles/2dEngine.dir/src/engine.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/engine.cpp",
+  "file": "/home/pedro_mint/2DGraphicEngine/src/engine.cpp"
+},
+{
+  "directory": "/home/pedro_mint/2DGraphicEngine/build",
+  "command": "/usr/bin/cc  -I/home/pedro_mint/2DGraphicEngine  -o CMakeFiles/2dEngine.dir/src/glad.c.o -c /home/pedro_mint/2DGraphicEngine/src/glad.c",
+  "file": "/home/pedro_mint/2DGraphicEngine/src/glad.c"
+},
+{
+  "directory": "/home/pedro_mint/2DGraphicEngine/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/2DGraphicEngine  -o CMakeFiles/2dEngine.dir/src/main.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/main.cpp",
+  "file": "/home/pedro_mint/2DGraphicEngine/src/main.cpp"
+},
+{
+  "directory": "/home/pedro_mint/2DGraphicEngine/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/2DGraphicEngine  -o CMakeFiles/2dEngine.dir/src/objeto.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/objeto.cpp",
+  "file": "/home/pedro_mint/2DGraphicEngine/src/objeto.cpp"
+},
+{
+  "directory": "/home/pedro_mint/2DGraphicEngine/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/2DGraphicEngine  -o CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/rendering/shader.cpp",
+  "file": "/home/pedro_mint/2DGraphicEngine/src/rendering/shader.cpp"
+}
+]
