@@ -1,5 +1,5 @@
 #include "include/engine.h"
-#include "include/objeto.h"
+#include "include/rendering/sprite.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -14,7 +14,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
    glViewport(0, 0, width, height);
 }
 
-Engine::Engine(): objetos(std::vector<Objeto>()){
+Engine::Engine(): sprites(std::vector<Sprite>()){
    //Esta parte inicializa glfw
    glfwInit();     
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -58,26 +58,26 @@ void Engine::render(){
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
 
-   for (int i = 0; i < objetos.size(); i++)
+   for (int i = 0; i < sprites.size(); i++)
    {
-      objetos[i].shader.use();
+      sprites[i].shader.use();
       
-      glBindTexture(GL_TEXTURE_2D, objetos[i].texture);
-      glBindVertexArray(objetos[i].VAO);
+      glBindTexture(GL_TEXTURE_2D, sprites[i].texture);
+      glBindVertexArray(sprites[i].VAO);
       glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
 
-      unsigned int transformLoc = glGetUniformLocation(objetos[i].shader.ID, "transform");
-      glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(objetos[i].matrix));
+      unsigned int transformLoc = glGetUniformLocation(sprites[i].shader.ID, "transform");
+      glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(sprites[i].matrix));
    }
 
    glfwSwapBuffers(_window);
    glfwPollEvents();
 }
 
-Objeto Engine::añadirObjeto(std::string pathToTexture, float width, float height, float xPos, float yPos){
-   Objeto objToAdd = Objeto(pathToTexture,width, height, xPos, yPos);
+Sprite Engine::añadirSprite(std::string pathToTexture, float width, float height, float xPos, float yPos){
+   Sprite objToAdd = Sprite(pathToTexture,width, height, xPos, yPos);
 
-   objetos.insert(objetos.end(), objToAdd);
+   sprites.insert(sprites.end(), objToAdd);
 
    return objToAdd;
 }

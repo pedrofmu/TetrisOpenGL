@@ -1,7 +1,7 @@
 #include "include/glm/ext/matrix_transform.hpp"
 #include "include/glm/ext/vector_float3.hpp"
 #include "include/rendering/shader.h"
-#include "include/objeto.h"
+#include "include/rendering/sprite.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "include/rendering/stb_image.h"
@@ -15,12 +15,12 @@
 #include "include/glm/gtc/matrix_transform.hpp"
 #include "include/glm/gtc/type_ptr.hpp"
 
-Objeto::Objeto(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH): shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
+Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH): shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
    //Crea los vertices
    float vertices[] = {
-      0.5,  0.5, 1.0f, 1.0f,              // top right
-      0.5, -0.5, 1.0f, 0.0f,            // bottom right
-      -0.5, -0.5, 0.0f, 0.0f,         // bottom left
+      0.5,  0.5, 1.0f, 1.0f,        // top right
+      0.5, -0.5, 1.0f, 0.0f,        // bottom right
+      -0.5, -0.5, 0.0f, 0.0f,       // bottom left
       0.5, 0.5, 0.0f, 1.0f          // top left 
    };
 

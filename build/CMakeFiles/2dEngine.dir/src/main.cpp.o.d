@@ -1,7 +1,7 @@
 CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /home/pedro_mint/2DGraphicEngine/src/main.cpp /usr/include/stdc-predef.h \
  /home/pedro_mint/2DGraphicEngine/include/engine.h \
- /home/pedro_mint/2DGraphicEngine/include/objeto.h \
+ /home/pedro_mint/2DGraphicEngine/include/rendering/sprite.h \
  /home/pedro_mint/2DGraphicEngine/include/glm/fwd.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/qualifier.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/setup.hpp \

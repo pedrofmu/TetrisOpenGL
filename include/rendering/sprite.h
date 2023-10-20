@@ -11,9 +11,9 @@
 #include "include/glm/gtc/matrix_transform.hpp"
 #include "include/glm/gtc/type_ptr.hpp"
 
-class Objeto {
+class Sprite {
 public:
-    Objeto(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
+    Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
 
     unsigned int VAO, VBO, EBO, texture;
     Shader shader;

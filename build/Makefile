@@ -201,30 +201,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/objeto.o: src/objeto.cpp.o
-.PHONY : src/objeto.o
-
-# target to build an object file
-src/objeto.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/objeto.cpp.o
-.PHONY : src/objeto.cpp.o
-
-src/objeto.i: src/objeto.cpp.i
-.PHONY : src/objeto.i
-
-# target to preprocess a source file
-src/objeto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/objeto.cpp.i
-.PHONY : src/objeto.cpp.i
-
-src/objeto.s: src/objeto.cpp.s
-.PHONY : src/objeto.s
-
-# target to generate assembly for a file
-src/objeto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/objeto.cpp.s
-.PHONY : src/objeto.cpp.s
-
 src/rendering/shader.o: src/rendering/shader.cpp.o
 .PHONY : src/rendering/shader.o
 
@@ -249,6 +225,30 @@ src/rendering/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s
 .PHONY : src/rendering/shader.cpp.s
 
+src/rendering/sprite.o: src/rendering/sprite.cpp.o
+.PHONY : src/rendering/sprite.o
+
+# target to build an object file
+src/rendering/sprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o
+.PHONY : src/rendering/sprite.cpp.o
+
+src/rendering/sprite.i: src/rendering/sprite.cpp.i
+.PHONY : src/rendering/sprite.i
+
+# target to preprocess a source file
+src/rendering/sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.i
+.PHONY : src/rendering/sprite.cpp.i
+
+src/rendering/sprite.s: src/rendering/sprite.cpp.s
+.PHONY : src/rendering/sprite.s
+
+# target to generate assembly for a file
+src/rendering/sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.s
+.PHONY : src/rendering/sprite.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,12 +267,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/objeto.o"
-	@echo "... src/objeto.i"
-	@echo "... src/objeto.s"
 	@echo "... src/rendering/shader.o"
 	@echo "... src/rendering/shader.i"
 	@echo "... src/rendering/shader.s"
+	@echo "... src/rendering/sprite.o"
+	@echo "... src/rendering/sprite.i"
+	@echo "... src/rendering/sprite.s"
 .PHONY : help
 
 

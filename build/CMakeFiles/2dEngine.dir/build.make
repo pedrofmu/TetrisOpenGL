@@ -111,24 +111,10 @@ CMakeFiles/2dEngine.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2dEngine.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/2DGraphicEngine/src/main.cpp -o CMakeFiles/2dEngine.dir/src/main.cpp.s
 
-CMakeFiles/2dEngine.dir/src/objeto.cpp.o: CMakeFiles/2dEngine.dir/flags.make
-CMakeFiles/2dEngine.dir/src/objeto.cpp.o: ../src/objeto.cpp
-CMakeFiles/2dEngine.dir/src/objeto.cpp.o: CMakeFiles/2dEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/2DGraphicEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2dEngine.dir/src/objeto.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2dEngine.dir/src/objeto.cpp.o -MF CMakeFiles/2dEngine.dir/src/objeto.cpp.o.d -o CMakeFiles/2dEngine.dir/src/objeto.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/objeto.cpp
-
-CMakeFiles/2dEngine.dir/src/objeto.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2dEngine.dir/src/objeto.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro_mint/2DGraphicEngine/src/objeto.cpp > CMakeFiles/2dEngine.dir/src/objeto.cpp.i
-
-CMakeFiles/2dEngine.dir/src/objeto.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2dEngine.dir/src/objeto.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/2DGraphicEngine/src/objeto.cpp -o CMakeFiles/2dEngine.dir/src/objeto.cpp.s
-
 CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o: CMakeFiles/2dEngine.dir/flags.make
 CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp
 CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o: CMakeFiles/2dEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/2DGraphicEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/2DGraphicEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o -MF CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o.d -o CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/rendering/shader.cpp
 
 CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.i: cmake_force
@@ -139,13 +125,27 @@ CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/2DGraphicEngine/src/rendering/shader.cpp -o CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s
 
+CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: CMakeFiles/2dEngine.dir/flags.make
+CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp
+CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: CMakeFiles/2dEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/2DGraphicEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o -MF CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o.d -o CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o -c /home/pedro_mint/2DGraphicEngine/src/rendering/sprite.cpp
+
+CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro_mint/2DGraphicEngine/src/rendering/sprite.cpp > CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.i
+
+CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/2DGraphicEngine/src/rendering/sprite.cpp -o CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.s
+
 # Object files for target 2dEngine
 2dEngine_OBJECTS = \
 "CMakeFiles/2dEngine.dir/src/engine.cpp.o" \
 "CMakeFiles/2dEngine.dir/src/glad.c.o" \
 "CMakeFiles/2dEngine.dir/src/main.cpp.o" \
-"CMakeFiles/2dEngine.dir/src/objeto.cpp.o" \
-"CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o"
+"CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o" \
+"CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o"
 
 # External object files for target 2dEngine
 2dEngine_EXTERNAL_OBJECTS =
@@ -153,8 +153,8 @@ CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s: cmake_force
 2dEngine: CMakeFiles/2dEngine.dir/src/engine.cpp.o
 2dEngine: CMakeFiles/2dEngine.dir/src/glad.c.o
 2dEngine: CMakeFiles/2dEngine.dir/src/main.cpp.o
-2dEngine: CMakeFiles/2dEngine.dir/src/objeto.cpp.o
 2dEngine: CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o
+2dEngine: CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o
 2dEngine: CMakeFiles/2dEngine.dir/build.make
 2dEngine: /usr/local/lib/libglfw3.a
 2dEngine: /usr/lib/x86_64-linux-gnu/librt.a

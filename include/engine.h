@@ -1,4 +1,4 @@
-#include "include/objeto.h"
+#include "include/rendering/sprite.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -8,9 +8,9 @@ class Engine{
 public:
     Engine();
     void Init();
-    Objeto añadirObjeto(std::string pathToTexture, float width, float heigth, float xPos, float yPos);
+    Sprite añadirSprite(std::string pathToTexture, float width, float heigth, float xPos, float yPos);
 
-    std::vector<Objeto> objetos;
+    std::vector<Sprite> sprites;
 
 private: 
     GLFWwindow* _window; 

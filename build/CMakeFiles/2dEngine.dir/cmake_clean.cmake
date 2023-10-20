@@ -7,10 +7,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/2dEngine.dir/src/glad.c.o.d"
   "CMakeFiles/2dEngine.dir/src/main.cpp.o"
   "CMakeFiles/2dEngine.dir/src/main.cpp.o.d"
-  "CMakeFiles/2dEngine.dir/src/objeto.cpp.o"
-  "CMakeFiles/2dEngine.dir/src/objeto.cpp.o.d"
   "CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o"
   "CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o.d"
+  "CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o"
+  "CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -11,8 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pedro_mint/2DGraphicEngine/src/glad.c" "CMakeFiles/2dEngine.dir/src/glad.c.o" "gcc" "CMakeFiles/2dEngine.dir/src/glad.c.o.d"
   "/home/pedro_mint/2DGraphicEngine/src/engine.cpp" "CMakeFiles/2dEngine.dir/src/engine.cpp.o" "gcc" "CMakeFiles/2dEngine.dir/src/engine.cpp.o.d"
   "/home/pedro_mint/2DGraphicEngine/src/main.cpp" "CMakeFiles/2dEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/2dEngine.dir/src/main.cpp.o.d"
-  "/home/pedro_mint/2DGraphicEngine/src/objeto.cpp" "CMakeFiles/2dEngine.dir/src/objeto.cpp.o" "gcc" "CMakeFiles/2dEngine.dir/src/objeto.cpp.o.d"
   "/home/pedro_mint/2DGraphicEngine/src/rendering/shader.cpp" "CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o" "gcc" "CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o.d"
+  "/home/pedro_mint/2DGraphicEngine/src/rendering/sprite.cpp" "CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o" "gcc" "CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o.d"
   )
 
 # Targets to which this target links.
