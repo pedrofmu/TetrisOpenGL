@@ -8,7 +8,7 @@ class Engine{
 public:
     Engine();
     void Init();
-    Sprite añadirSprite(std::string pathToTexture, float width, float heigth, float xPos, float yPos);
+    Sprite añadirSprite(std::string pathToTexture,float xPos, float yPos, float width, float heigth);
 
     std::vector<Sprite> sprites;
 

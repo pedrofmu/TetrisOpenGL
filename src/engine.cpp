@@ -74,8 +74,8 @@ void Engine::render(){
    glfwPollEvents();
 }
 
-Sprite Engine::añadirSprite(std::string pathToTexture, float width, float height, float xPos, float yPos){
-   Sprite objToAdd = Sprite(pathToTexture,width, height, xPos, yPos);
+Sprite Engine::añadirSprite(std::string pathToTexture, float xPos, float yPos, float width, float height){
+   Sprite objToAdd = Sprite(pathToTexture,xPos, yPos, width, height);
 
    sprites.insert(sprites.end(), objToAdd);
 

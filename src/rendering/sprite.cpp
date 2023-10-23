@@ -16,12 +16,11 @@
 #include "include/glm/gtc/type_ptr.hpp"
 
 Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH): shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
-   //Crea los vertices
-   float vertices[] = {
+    float vertices[] = {
       0.5,  0.5, 1.0f, 1.0f,        // top right
       0.5, -0.5, 1.0f, 0.0f,        // bottom right
       -0.5, -0.5, 0.0f, 0.0f,       // bottom left
-      0.5, 0.5, 0.0f, 1.0f          // top left 
+      -0.5,  0.5, 0.0f, 1.0f        // top left 
    };
 
    unsigned int indices[] = {
