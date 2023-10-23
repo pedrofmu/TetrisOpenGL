@@ -1,13 +1,17 @@
-#version 330 core
+#version 430 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec2 aTexCoord;
 
 out vec2 VertexTexCoord;
 
 uniform mat4 transform;
+uniform vec2 window;
 
 void main()
 {
-    gl_Position = transform * vec4(aPos.x, aPos.y, 1.0, 1.0);
-    VertexTexCoord = vec2(aTexCoord.x, aTexCoord.y); // Actualiza el nombre aquí
+  vec4 position =  transform * vec4(aPos.x, aPos.y, 0.0, 1.0);
+
+  gl_Position = position;
+  
+  VertexTexCoord = vec2(aTexCoord.x, aTexCoord.y);
 }

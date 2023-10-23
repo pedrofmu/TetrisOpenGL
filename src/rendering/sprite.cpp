@@ -1,7 +1,9 @@
+#include "include/glm/ext/matrix_float4x4.hpp"
 #include "include/glm/ext/matrix_transform.hpp"
 #include "include/glm/ext/vector_float3.hpp"
 #include "include/rendering/shader.h"
 #include "include/rendering/sprite.h"
+#include <ostream>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "include/rendering/stb_image.h"
@@ -70,4 +72,7 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    heigth = HEIGTH;
 
    matrix = glm::translate(matrix, glm::vec3(xPos, yPos, 0));
+   
+   matrix[0][0] = matrix[0][0] * WIDTH;
+   matrix[1][1] = matrix[1][1] * heigth;
 };
