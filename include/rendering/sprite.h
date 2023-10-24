@@ -15,12 +15,19 @@ class Sprite {
 public:
     Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
 
+    void render(int w_width, int w_heigth);
+    void setPosition(float nX, float nY);
+    void setScale(float n_width, float n_heigth);
+    void setRotation(float n_rotation);
+
+private:
     unsigned int VAO, VBO, EBO, texture;
     Shader shader;
 
     glm::mat4 matrix;
     float xPos, yPos;
     float width, heigth;
+    float rotation;
 };
 
 #endif // OBJETO_H

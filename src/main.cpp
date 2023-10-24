@@ -2,11 +2,11 @@
 #include "include/rendering/sprite.h"
 
 int main () {
-   Engine engine = Engine();
+   Engine engine = Engine(800, 600);
    
    //ahora mismo és 
-   engine.añadirSprite("../assets/textures/tex.jpeg", 400, 300, 800, 600);
-   engine.añadirSprite("../assets/textures/coche.jpg", 0, 0, 800, 600);
+   Sprite* sprite1 = engine.addSprite("../assets/textures/tex.jpeg", 400, 300, 800, 600);
+   engine.addSprite("../assets/textures/coche.jpg", 0, 0, 800, 600);
 
    engine.Init();
 

@@ -18,7 +18,7 @@
 #include "include/glm/gtc/type_ptr.hpp"
 
 Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH): shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
-    float vertices[] = {
+   float vertices[] = {
       0.5,  0.5, 1.0f, 1.0f,        // top right
       0.5, -0.5, 1.0f, 0.0f,        // bottom right
       -0.5, -0.5, 0.0f, 0.0f,       // bottom left
@@ -76,3 +76,43 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    matrix[0][0] = matrix[0][0] * WIDTH;
    matrix[1][1] = matrix[1][1] * heigth;
 };
+
+void Sprite::render(int w_width, int w_heigth){
+   shader.use();
+      
+   //bindea la textura y los vertices
+   glBindTexture(GL_TEXTURE_2D, texture);
+   glBindVertexArray(VAO);
+
+   //normaliza la matriz
+   glm::mat4 normalizedMatrix = matrix;
+   normalizedMatrix[3][0] = (normalizedMatrix[3][0] / (w_width * 0.5)) - 1.0;
+   normalizedMatrix[3][1] = (normalizedMatrix[3][1] / (w_heigth * 0.5)) - 1.0;
+
+   normalizedMatrix[0][0] = (normalizedMatrix[0][0] / (w_width * 0.5));
+   normalizedMatrix[1][1] = normalizedMatrix[1][1] / (w_heigth * 0.5);
+
+   //establece los uniforms
+   unsigned int transformLoc = glGetUniformLocation(shader.ID, "transform");
+   glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(normalizedMatrix));
+
+   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
+};
+
+void Sprite::setPosition(float nX, float nY){
+   xPos = nX;
+   yPos = nY;
+
+   matrix[3][0] = xPos;
+   matrix[3][1] = yPos;
+};
+
+void Sprite::setScale(float n_width, float n_heigth){
+   width = n_width;
+   heigth = n_heigth;
+
+   matrix[0][0] = width;
+   matrix[1][1] = heigth;
+};
+
+void Sprite::setRotation()

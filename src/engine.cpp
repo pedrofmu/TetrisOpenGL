@@ -9,13 +9,18 @@
 #include <include/glm/gtc/matrix_transform.hpp>
 #include <include/glm/gtc/type_ptr.hpp>
 
+int w_width;
+int w_heigth;
+
 //Cambia el viewport segun se redimensione la pantalla
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
+   w_width = width;
+   w_heigth = height;
    glViewport(0, 0, width, height);
 }
 
-Engine::Engine(): sprites(std::vector<Sprite>()){
+Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
    //Esta parte inicializa glfw
    glfwInit();     
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -23,7 +28,10 @@ Engine::Engine(): sprites(std::vector<Sprite>()){
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
    //Esta parte se encarga de inicializar la ventana 
-   _window = glfwCreateWindow(800, 600, "Tetris", NULL, NULL);
+   w_width = window_width;
+   w_heigth = window_heigth;
+
+   _window = glfwCreateWindow(w_width, w_heigth, "Tetris", NULL, NULL);
    
    if (_window == NULL)
    {
@@ -42,7 +50,7 @@ Engine::Engine(): sprites(std::vector<Sprite>()){
    }
 
    //Establece el viewport 
-   glViewport(0, 0, 800, 600);
+   glViewport(0, 0, w_width, w_heigth);
    glfwSetFramebufferSizeCallback(_window, framebuffer_size_callback);
 };
 
@@ -58,46 +66,20 @@ void Engine::Init(){
 void Engine::render(){
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
-   
-   int w_width, w_heigth;
-   w_width = 0;
-   w_heigth = 0;
-   glfwGetWindowSize(_window, &w_width, &w_heigth);
 
-   for (int i = 0; i < sprites.size(); i++)
+   for (Sprite* sprite : sprites)
    {
-      sprites[i].shader.use();
-      
-      //bindea la textura y los vertices
-      glBindTexture(GL_TEXTURE_2D, sprites[i].texture);
-      glBindVertexArray(sprites[i].VAO);
-
-      //normaliza la matriz
-      glm::mat4 normalizedMatrix = sprites[i].matrix;
-      normalizedMatrix[3][0] = (normalizedMatrix[3][0] / (w_width * 0.5)) - 1.0;
-      normalizedMatrix[3][1] = (normalizedMatrix[3][1] / (w_heigth * 0.5)) - 1.0;
-
-      normalizedMatrix[0][0] = (normalizedMatrix[0][0] / (w_width * 0.5));
-      normalizedMatrix[1][1] = normalizedMatrix[1][1] / (w_heigth * 0.5);
-
-      //establece los uniforms
-      unsigned int transformLoc = glGetUniformLocation(sprites[i].shader.ID, "transform");
-      glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(normalizedMatrix));
-
-      unsigned int windowLoc = glGetUniformLocation(sprites[i].shader.ID, "window");
-      glUniform2f(windowLoc, 800.0f, 600.0f);
-
-      glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
+      sprite->render(w_width, w_heigth);
    }
 
    glfwSwapBuffers(_window);
    glfwPollEvents();
 }
 
-Sprite Engine::añadirSprite(std::string pathToTexture, float xPos, float yPos, float width, float height){
-   Sprite objToAdd = Sprite(pathToTexture,xPos, yPos, width, height);
+Sprite* Engine::addSprite(std::string pathToTexture, float xPos, float yPos, float width, float height){
+   Sprite* objToAdd = new Sprite(pathToTexture,xPos, yPos, width, height);
 
-   sprites.insert(sprites.end(), objToAdd);
+   sprites.push_back(objToAdd);
 
    return objToAdd;
 }

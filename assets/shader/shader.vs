@@ -5,7 +5,6 @@ layout (location = 1) in vec2 aTexCoord;
 out vec2 VertexTexCoord;
 
 uniform mat4 transform;
-uniform vec2 window;
 
 void main()
 {

@@ -6,12 +6,11 @@
 
 class Engine{
 public:
-    Engine();
+    Engine(int window_width, int window_heigth);
     void Init();
-    Sprite añadirSprite(std::string pathToTexture,float xPos, float yPos, float width, float heigth);
+    Sprite* addSprite(std::string pathToTexture,float xPos, float yPos, float width, float heigth);
 
-    std::vector<Sprite> sprites;
-
+    std::vector<Sprite*> sprites;
 private: 
     GLFWwindow* _window; 
     void render();
