@@ -20,11 +20,14 @@ public:
     void setScale(float n_width, float n_heigth);
     void setRotation(float n_rotation);
 
+    glm::vec2 getPosition();
+    glm::vec2 getScale();
+    float getRotation();
 private:
     unsigned int VAO, VBO, EBO, texture;
     Shader shader;
 
-    glm::mat4 matrix;
+    glm::mat4 matrix, rotationMatrix;
     float xPos, yPos;
     float width, heigth;
     float rotation;

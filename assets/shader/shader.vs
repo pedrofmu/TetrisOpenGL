@@ -12,5 +12,5 @@ void main()
 
   gl_Position = position;
   
-  VertexTexCoord = vec2(aTexCoord.x, aTexCoord.y);
+  VertexTexCoord =  vec2(aTexCoord.x, aTexCoord.y);
 }

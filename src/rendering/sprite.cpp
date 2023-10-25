@@ -17,6 +17,7 @@
 #include "include/glm/gtc/matrix_transform.hpp"
 #include "include/glm/gtc/type_ptr.hpp"
 
+//Constructor del sprite
 Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH): shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
    float vertices[] = {
       0.5,  0.5, 1.0f, 1.0f,        // top right
@@ -30,6 +31,7 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
       1, 2, 3  
    };
 
+   //Crea el VAO VBO y EBO
    glGenVertexArrays(1, &VAO);
    glGenBuffers(1, &VBO);
    glGenBuffers(1, &EBO);
@@ -45,11 +47,12 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
    glEnableVertexAttribArray(0);
 
-   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
    glEnableVertexAttribArray(1);
 
    //crear textura
    int width, height, nrChannels;
+   stbi_set_flip_vertically_on_load(true);
    unsigned char *data = stbi_load(pathToTexture.c_str(), &width, &height, &nrChannels, 0);
 
    texture = 0; 
@@ -58,7 +61,11 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    glBindTexture(GL_TEXTURE_2D, texture);
 
    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+   
    glGenerateMipmap(GL_TEXTURE_2D);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
    stbi_image_free(data);
 
@@ -75,8 +82,11 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    
    matrix[0][0] = matrix[0][0] * WIDTH;
    matrix[1][1] = matrix[1][1] * heigth;
+
+   rotationMatrix = glm::mat4(1.0f);
 };
 
+//Renderiza el sprite
 void Sprite::render(int w_width, int w_heigth){
    shader.use();
       
@@ -92,6 +102,9 @@ void Sprite::render(int w_width, int w_heigth){
    normalizedMatrix[0][0] = (normalizedMatrix[0][0] / (w_width * 0.5));
    normalizedMatrix[1][1] = normalizedMatrix[1][1] / (w_heigth * 0.5);
 
+   //rota la matriz normalizada
+   normalizedMatrix = normalizedMatrix * rotationMatrix;
+
    //establece los uniforms
    unsigned int transformLoc = glGetUniformLocation(shader.ID, "transform");
    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(normalizedMatrix));
@@ -99,6 +112,7 @@ void Sprite::render(int w_width, int w_heigth){
    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
 };
 
+//Establece la posición (se normaliza automaticamente)
 void Sprite::setPosition(float nX, float nY){
    xPos = nX;
    yPos = nY;
@@ -107,6 +121,7 @@ void Sprite::setPosition(float nX, float nY){
    matrix[3][1] = yPos;
 };
 
+//Establece la rotacion (se normaliza automaticamente) 
 void Sprite::setScale(float n_width, float n_heigth){
    width = n_width;
    heigth = n_heigth;
@@ -115,4 +130,25 @@ void Sprite::setScale(float n_width, float n_heigth){
    matrix[1][1] = heigth;
 };
 
-void Sprite::setRotation()
+//Establece la rotación (se debe pasar en grados)
+void Sprite::setRotation(float n_rotation){
+   rotation = n_rotation;
+
+   rotationMatrix = glm::rotate(rotationMatrix,glm::radians(rotation), glm::vec3(0,0,1));
+};
+
+glm::vec2 Sprite::getPosition(){
+   glm::vec2 position = glm::vec2(xPos, yPos);
+
+   return position;
+}
+
+glm::vec2 Sprite::getScale(){
+   glm::vec2 scale = glm::vec2(width, heigth);
+
+   return scale;
+}
+
+float Sprite::getRotation(){
+   return rotation;
+}

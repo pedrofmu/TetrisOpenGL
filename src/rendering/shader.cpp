@@ -8,6 +8,8 @@
 #include <iostream>
 
 using namespace std;
+
+//Crea el shader, se debe pasar el path al vertex shader y el fragment
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
     //Las variables que guardan el shader
@@ -90,20 +92,24 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glDeleteShader(fragment);
 };
 
+//Utilizarlo
 void Shader::use(){
    glUseProgram(ID);
 }
 
+//Establece un bool
 void Shader::setBool(const std::string &name, bool value) const
 {
    glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
 }
 
+//Establece un int
 void Shader::setInt(const std::string &name, int value) const
 {
    glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
 
+//Establece un flotante
 void Shader::setFloat(const std::string &name, float value) const
 {
    glUniform1f(glGetUniformLocation(ID, name.c_str()), value);

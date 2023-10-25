@@ -1,6 +1,7 @@
 #include "include/engine.h"
 #include "include/glm/fwd.hpp"
 #include "include/rendering/sprite.h"
+#include <algorithm>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -20,6 +21,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
    glViewport(0, 0, width, height);
 }
 
+//El constructor de la clase Engine
 Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
    //Esta parte inicializa glfw
    glfwInit();     
@@ -54,6 +56,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
    glfwSetFramebufferSizeCallback(_window, framebuffer_size_callback);
 };
 
+//inicializa el bucle de renderizado
 void Engine::Init(){
    while(!glfwWindowShouldClose(_window))
    {
@@ -63,6 +66,7 @@ void Engine::Init(){
    glfwTerminate();
 };
 
+//Funcion de renderizado
 void Engine::render(){
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
@@ -76,6 +80,7 @@ void Engine::render(){
    glfwPollEvents();
 }
 
+//Añadir un sprite a la lista
 Sprite* Engine::addSprite(std::string pathToTexture, float xPos, float yPos, float width, float height){
    Sprite* objToAdd = new Sprite(pathToTexture,xPos, yPos, width, height);
 
