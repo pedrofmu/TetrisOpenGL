@@ -1,10 +1,10 @@
 CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /home/pedro_mint/2DGraphicEngine/src/main.cpp /usr/include/stdc-predef.h \
  /home/pedro_mint/2DGraphicEngine/include/engine.h \
- /home/pedro_mint/2DGraphicEngine/include/rendering/sprite.h \
- /home/pedro_mint/2DGraphicEngine/include/glm/fwd.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/detail/qualifier.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/detail/setup.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/vector_float2.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/type_vec2.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/qualifier.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/setup.hpp \
  /usr/include/c++/11/cassert \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -19,7 +19,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/pstl_config.h /usr/include/assert.h \
  /usr/include/c++/11/cstddef \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /home/pedro_mint/2DGraphicEngine/include/glm/detail/../simd/platform.h \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/../simd/platform.h \
  /usr/include/c++/11/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -30,6 +30,12 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/c++/11/type_traits \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/type_vec2.inl \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/./compute_vector_relational.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/ext/../detail/./setup.hpp \
+ /usr/include/c++/11/limits \
+ /home/pedro_mint/2DGraphicEngine/include/rendering/sprite.h \
+ /home/pedro_mint/2DGraphicEngine/include/glm/fwd.hpp \
  /home/pedro_mint/2DGraphicEngine/include/rendering/shader.h \
  /usr/include/glad/glad.h /usr/include/KHR/khrplatform.h \
  /usr/include/c++/11/string /usr/include/c++/11/bits/stringfwd.h \
@@ -174,8 +180,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
- /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
  /usr/include/c++/11/tr1/bessel_function.tcc \
  /usr/include/c++/11/tr1/beta_function.tcc \
@@ -200,12 +205,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /home/pedro_mint/2DGraphicEngine/include/glm/vec2.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_bool2.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/./ext/../detail/type_vec2.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/./ext/../detail/type_vec2.inl \
- /home/pedro_mint/2DGraphicEngine/include/glm/./ext/../detail/./compute_vector_relational.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/./ext/../detail/./setup.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_bool2_precision.hpp \
- /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_float2.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_float2_precision.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_double2.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/./ext/vector_double2_precision.hpp \
@@ -329,6 +329,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /home/pedro_mint/2DGraphicEngine/include/glm/packing.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/func_packing.inl \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/type_half.hpp \
+ /home/pedro_mint/2DGraphicEngine/include/glm/detail/setup.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/type_half.inl \
  /home/pedro_mint/2DGraphicEngine/include/glm/integer.hpp \
  /home/pedro_mint/2DGraphicEngine/include/glm/detail/func_integer.inl \
@@ -387,4 +388,12 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/std_thread.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/bits/unique_ptr.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h

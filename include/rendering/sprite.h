@@ -14,6 +14,7 @@
 class Sprite {
 public:
     Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
+    ~Sprite();
 
     void render(int w_width, int w_heigth);
     void setPosition(float nX, float nY);

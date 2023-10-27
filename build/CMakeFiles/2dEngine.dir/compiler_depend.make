@@ -4,8 +4,8 @@
 CMakeFiles/2dEngine.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/include/stdc-predef.h \
   ../include/engine.h \
-  ../include/rendering/sprite.h \
-  ../include/glm/fwd.hpp \
+  ../include/glm/ext/vector_float2.hpp \
+  ../include/glm/detail/type_vec2.hpp \
   ../include/glm/detail/qualifier.hpp \
   ../include/glm/detail/setup.hpp \
   /usr/include/c++/11/cassert \
@@ -36,6 +36,12 @@ CMakeFiles/2dEngine.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/c++/11/type_traits \
+  ../include/glm/detail/type_vec2.inl \
+  ../include/glm/detail/compute_vector_relational.hpp \
+  ../include/glm/detail/setup.hpp \
+  /usr/include/c++/11/limits \
+  ../include/rendering/sprite.h \
+  ../include/glm/fwd.hpp \
   ../include/rendering/shader.h \
   /usr/include/glad/glad.h \
   /usr/include/KHR/khrplatform.h \
@@ -215,7 +221,6 @@ CMakeFiles/2dEngine.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/c++/11/bits/specfun.h \
-  /usr/include/c++/11/limits \
   /usr/include/c++/11/tr1/gamma.tcc \
   /usr/include/c++/11/tr1/special_function_util.h \
   /usr/include/c++/11/tr1/bessel_function.tcc \
@@ -243,12 +248,7 @@ CMakeFiles/2dEngine.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   ../include/glm/vec2.hpp \
   ../include/glm/ext/vector_bool2.hpp \
-  ../include/glm/detail/type_vec2.hpp \
-  ../include/glm/detail/type_vec2.inl \
-  ../include/glm/detail/compute_vector_relational.hpp \
-  ../include/glm/detail/setup.hpp \
   ../include/glm/ext/vector_bool2_precision.hpp \
-  ../include/glm/ext/vector_float2.hpp \
   ../include/glm/ext/vector_float2_precision.hpp \
   ../include/glm/ext/vector_double2.hpp \
   ../include/glm/ext/vector_double2_precision.hpp \
@@ -372,6 +372,7 @@ CMakeFiles/2dEngine.dir/src/engine.cpp.o: ../src/engine.cpp \
   ../include/glm/packing.hpp \
   ../include/glm/detail/func_packing.inl \
   ../include/glm/detail/type_half.hpp \
+  ../include/glm/detail/setup.hpp \
   ../include/glm/detail/type_half.inl \
   ../include/glm/integer.hpp \
   ../include/glm/detail/func_integer.inl \
@@ -530,8 +531,8 @@ CMakeFiles/2dEngine.dir/src/glad.c.o: ../src/glad.c \
 CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/stdc-predef.h \
   ../include/engine.h \
-  ../include/rendering/sprite.h \
-  ../include/glm/fwd.hpp \
+  ../include/glm/ext/vector_float2.hpp \
+  ../include/glm/detail/type_vec2.hpp \
   ../include/glm/detail/qualifier.hpp \
   ../include/glm/detail/setup.hpp \
   /usr/include/c++/11/cassert \
@@ -562,6 +563,12 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/c++/11/type_traits \
+  ../include/glm/detail/type_vec2.inl \
+  ../include/glm/detail/compute_vector_relational.hpp \
+  ../include/glm/detail/setup.hpp \
+  /usr/include/c++/11/limits \
+  ../include/rendering/sprite.h \
+  ../include/glm/fwd.hpp \
   ../include/rendering/shader.h \
   /usr/include/glad/glad.h \
   /usr/include/KHR/khrplatform.h \
@@ -741,7 +748,6 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/c++/11/bits/specfun.h \
-  /usr/include/c++/11/limits \
   /usr/include/c++/11/tr1/gamma.tcc \
   /usr/include/c++/11/tr1/special_function_util.h \
   /usr/include/c++/11/tr1/bessel_function.tcc \
@@ -769,12 +775,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   ../include/glm/vec2.hpp \
   ../include/glm/ext/vector_bool2.hpp \
-  ../include/glm/detail/type_vec2.hpp \
-  ../include/glm/detail/type_vec2.inl \
-  ../include/glm/detail/compute_vector_relational.hpp \
-  ../include/glm/detail/setup.hpp \
   ../include/glm/ext/vector_bool2_precision.hpp \
-  ../include/glm/ext/vector_float2.hpp \
   ../include/glm/ext/vector_float2_precision.hpp \
   ../include/glm/ext/vector_double2.hpp \
   ../include/glm/ext/vector_double2_precision.hpp \
@@ -898,6 +899,7 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/glm/packing.hpp \
   ../include/glm/detail/func_packing.inl \
   ../include/glm/detail/type_half.hpp \
+  ../include/glm/detail/setup.hpp \
   ../include/glm/detail/type_half.inl \
   ../include/glm/integer.hpp \
   ../include/glm/detail/func_integer.inl \
@@ -959,7 +961,22 @@ CMakeFiles/2dEngine.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h
 
 CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp \
   /usr/include/stdc-predef.h \
@@ -1599,6 +1616,16 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 ../src/rendering/sprite.cpp:
 
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/include/c++/11/ctime:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/c++/11/ratio:
+
+/usr/include/c++/11/thread:
+
 ../src/glad.c:
 
 /usr/include/c++/11/bits/unordered_map.h:
@@ -1825,18 +1852,6 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 ../include/glm/detail/type_vec3.hpp:
 
-/usr/include/c++/11/bits/stl_construct.h:
-
-/usr/include/c++/11/tr1/exp_integral.tcc:
-
-/usr/include/c++/11/bits/cxxabi_forced.h:
-
-../include/glm/ext/vector_int1_sized.hpp:
-
-../include/glm/ext/matrix_double4x3.hpp:
-
-/usr/include/c++/11/fstream:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
@@ -1889,6 +1904,14 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
+/usr/include/c++/11/bits/cxxabi_forced.h:
+
+../include/glm/ext/vector_int1_sized.hpp:
+
+../include/glm/ext/matrix_double4x3.hpp:
+
+/usr/include/c++/11/fstream:
+
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 ../include/glm/ext/vector_double4_precision.hpp:
@@ -1904,10 +1927,6 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/11/bits/localefwd.h:
-
-/usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
@@ -1941,6 +1960,16 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/c++/11/tr1/special_function_util.h:
+
+/usr/include/c++/11/clocale:
+
+/usr/include/c++/11/bits/ostream.tcc:
+
 ../include/glm/ext/matrix_projection.hpp:
 
 /usr/include/c++/11/cwchar:
@@ -1957,10 +1986,6 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/c++/11/bits/range_access.h:
 
-../include/glm/vec3.hpp:
-
-/usr/include/assert.h:
-
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/cstdlib:
@@ -1973,7 +1998,13 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/c++/11/cstdint:
+
 /usr/include/ctype.h:
+
+/usr/include/c++/11/bits/std_thread.h:
 
 ../include/glm/detail/type_mat2x3.inl:
 
@@ -1996,12 +2027,6 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 ../include/engine.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-../include/glm/mat2x3.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
@@ -2039,17 +2064,45 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-../include/glm/ext/matrix_float2x4.hpp:
-
-/usr/include/c++/11/bits/alloc_traits.h:
-
-/usr/include/stdc-predef.h:
-
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/bits/stl_function.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+../include/glm/ext/vector_uint4_sized.hpp:
+
+../include/glm/ext/vector_float2.hpp:
+
+../include/glm/detail/type_vec3.inl:
+
+../include/glm/glm.hpp:
+
+/usr/include/c++/11/ext/type_traits.h:
+
+../include/glm/detail/type_quat.hpp:
+
+../include/glm/detail/type_vec2.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/c++/11/ext/numeric_traits.h:
+
+../include/glm/ext/matrix_float4x2.hpp:
+
+../include/glm/ext/vector_double2.hpp:
+
+../include/glm/detail/compute_common.hpp:
+
+/usr/include/features.h:
+
+/usr/include/c++/11/bits/char_traits.h:
+
+../include/glm/ext/matrix_double4x4_precision.hpp:
+
+/usr/include/asm-generic/errno-base.h:
+
+../include/glm/ext/vector_bool3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
@@ -2057,15 +2110,23 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/c++/11/type_traits:
 
+../include/glm/ext/vector_relational.inl:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
 ../include/glm/ext/matrix_projection.inl:
 
 ../include/glm/detail/qualifier.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+../include/glm/mat2x3.hpp:
 
-/usr/include/c++/11/debug/assertions.h:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-../include/glm/simd/platform.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 /usr/include/c++/11/cassert:
 
@@ -2093,73 +2154,49 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/c++/11/chrono:
 
-/usr/include/x86_64-linux-gnu/bits/timex.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/c++/11/cstdint:
+../include/glm/simd/platform.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/include/c++/11/tr1/special_function_util.h:
-
-../include/glm/detail/type_quat.hpp:
-
-../include/glm/detail/type_vec2.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-../include/glm/ext/vector_relational.inl:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-../include/glm/detail/type_vec3.inl:
-
-../include/glm/glm.hpp:
-
-/usr/include/c++/11/ext/type_traits.h:
-
-/usr/include/c++/11/ext/numeric_traits.h:
-
-../include/glm/ext/matrix_float4x2.hpp:
-
-../include/glm/ext/vector_double2.hpp:
-
-../include/glm/detail/compute_common.hpp:
-
-/usr/include/features.h:
-
-/usr/include/c++/11/bits/char_traits.h:
-
-../include/glm/ext/matrix_double4x4_precision.hpp:
-
-/usr/include/asm-generic/errno-base.h:
-
-../include/glm/ext/vector_bool3.hpp:
-
-../include/glm/ext/matrix_double4x3_precision.hpp:
-
-/usr/include/c++/11/cctype:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/c++/11/bits/ostream_insert.h:
-
-/usr/include/glad/glad.h:
+/usr/include/c++/11/debug/assertions.h:
 
 ../include/glm/gtc/quaternion.hpp:
 
 ../include/glm/ext/vector_double3_precision.hpp:
 
+/usr/include/c++/11/bits/predefined_ops.h:
+
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/c++/11/bits/predefined_ops.h:
+../include/glm/ext/matrix_double4x3_precision.hpp:
+
+/usr/include/c++/11/cctype:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/glad/glad.h:
+
+/usr/include/c++/11/bits/localefwd.h:
+
+/usr/include/c++/11/tr1/hypergeometric.tcc:
+
+/usr/include/assert.h:
+
+../include/glm/vec3.hpp:
+
+../include/glm/detail/func_common.inl:
+
+../include/glm/ext/matrix_double3x4_precision.hpp:
+
+../include/glm/detail/compute_vector_relational.hpp:
+
+/usr/include/c++/11/limits:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
 
@@ -2170,8 +2207,6 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 /usr/include/c++/11/bits/functexcept.h:
 
 /usr/include/c++/11/streambuf:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
@@ -2189,9 +2224,17 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/c++/11/bits/concept_check.h:
 
-/usr/include/c++/11/clocale:
+/usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
-/usr/include/c++/11/bits/ostream.tcc:
+../include/glm/ext/matrix_float2x4.hpp:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/11/bits/alloc_traits.h:
+
+/usr/include/c++/11/bits/stl_construct.h:
+
+/usr/include/c++/11/tr1/exp_integral.tcc:
 
 /usr/include/c++/11/bits/functional_hash.h:
 
@@ -2359,6 +2402,8 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
+/usr/include/c++/11/bits/this_thread_sleep.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
@@ -2427,17 +2472,15 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 /usr/include/c++/11/bits/specfun.h:
 
-/usr/include/c++/11/limits:
-
 /usr/include/c++/11/array:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
 ../include/glm/ext/quaternion_trigonometric.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
@@ -2481,17 +2524,7 @@ CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp 
 
 ../include/glm/ext/vector_bool2.hpp:
 
-../include/glm/detail/func_common.inl:
-
-../include/glm/ext/matrix_double3x4_precision.hpp:
-
-../include/glm/detail/compute_vector_relational.hpp:
-
 ../include/glm/ext/vector_bool2_precision.hpp:
-
-../include/glm/ext/vector_uint4_sized.hpp:
-
-../include/glm/ext/vector_float2.hpp:
 
 /usr/include/c++/11/functional:
 
