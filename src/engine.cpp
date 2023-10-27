@@ -21,7 +21,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
    glViewport(0, 0, width, height);
 }
 
-
 //El constructor de la clase Engine
 Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
    //Esta parte inicializa glfw
