@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro_mint/2DGraphicEngine
+CMAKE_SOURCE_DIR = /home/pedro_mint/TetrisOpenGL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro_mint/2DGraphicEngine/build
+CMAKE_BINARY_DIR = /home/pedro_mint/TetrisOpenGL/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/2DGraphicEngine/build/CMakeFiles /home/pedro_mint/2DGraphicEngine/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/TetrisOpenGL/build/CMakeFiles /home/pedro_mint/TetrisOpenGL/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/2DGraphicEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/TetrisOpenGL/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 2dEngine
+# Target rules for targets named TetrisOpenGL
 
 # Build rule for target.
-2dEngine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2dEngine
-.PHONY : 2dEngine
+TetrisOpenGL: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TetrisOpenGL
+.PHONY : TetrisOpenGL
 
 # fast build rule for target.
-2dEngine/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/build
-.PHONY : 2dEngine/fast
+TetrisOpenGL/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/build
+.PHONY : TetrisOpenGL/fast
 
 src/engine.o: src/engine.cpp.o
 .PHONY : src/engine.o
 
 # target to build an object file
 src/engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o
 .PHONY : src/engine.cpp.o
 
 src/engine.i: src/engine.cpp.i
@@ -142,7 +142,7 @@ src/engine.i: src/engine.cpp.i
 
 # target to preprocess a source file
 src/engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.i
 .PHONY : src/engine.cpp.i
 
 src/engine.s: src/engine.cpp.s
@@ -150,15 +150,39 @@ src/engine.s: src/engine.cpp.s
 
 # target to generate assembly for a file
 src/engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.s
 .PHONY : src/engine.cpp.s
+
+src/game.o: src/game.cpp.o
+.PHONY : src/game.o
+
+# target to build an object file
+src/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
+
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
 
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
 # target to build an object file
 src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/glad.c.o
 .PHONY : src/glad.c.o
 
 src/glad.i: src/glad.c.i
@@ -166,7 +190,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -174,7 +198,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/main.o: src/main.cpp.o
@@ -182,7 +206,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -190,7 +214,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -198,7 +222,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/rendering/shader.o: src/rendering/shader.cpp.o
@@ -206,7 +230,7 @@ src/rendering/shader.o: src/rendering/shader.cpp.o
 
 # target to build an object file
 src/rendering/shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o
 .PHONY : src/rendering/shader.cpp.o
 
 src/rendering/shader.i: src/rendering/shader.cpp.i
@@ -214,7 +238,7 @@ src/rendering/shader.i: src/rendering/shader.cpp.i
 
 # target to preprocess a source file
 src/rendering/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.i
 .PHONY : src/rendering/shader.cpp.i
 
 src/rendering/shader.s: src/rendering/shader.cpp.s
@@ -222,7 +246,7 @@ src/rendering/shader.s: src/rendering/shader.cpp.s
 
 # target to generate assembly for a file
 src/rendering/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.s
 .PHONY : src/rendering/shader.cpp.s
 
 src/rendering/sprite.o: src/rendering/sprite.cpp.o
@@ -230,7 +254,7 @@ src/rendering/sprite.o: src/rendering/sprite.cpp.o
 
 # target to build an object file
 src/rendering/sprite.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o
 .PHONY : src/rendering/sprite.cpp.o
 
 src/rendering/sprite.i: src/rendering/sprite.cpp.i
@@ -238,7 +262,7 @@ src/rendering/sprite.i: src/rendering/sprite.cpp.i
 
 # target to preprocess a source file
 src/rendering/sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.i
 .PHONY : src/rendering/sprite.cpp.i
 
 src/rendering/sprite.s: src/rendering/sprite.cpp.s
@@ -246,7 +270,7 @@ src/rendering/sprite.s: src/rendering/sprite.cpp.s
 
 # target to generate assembly for a file
 src/rendering/sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dEngine.dir/build.make CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.s
 .PHONY : src/rendering/sprite.cpp.s
 
 # Help Target
@@ -257,10 +281,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 2dEngine"
+	@echo "... TetrisOpenGL"
 	@echo "... src/engine.o"
 	@echo "... src/engine.i"
 	@echo "... src/engine.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

@@ -55,5 +55,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/2dEngine.dir/DependInfo.cmake"
+  "CMakeFiles/TetrisOpenGL.dir/DependInfo.cmake"
   )

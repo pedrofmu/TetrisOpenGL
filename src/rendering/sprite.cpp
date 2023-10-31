@@ -3,6 +3,7 @@
 #include "include/glm/ext/vector_float3.hpp"
 #include "include/rendering/shader.h"
 #include "include/rendering/sprite.h"
+#include <cstdio>
 #include <ostream>
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -86,6 +87,18 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    rotationMatrix = glm::mat4(1.0f);
 };
 
+//Destructor de la clase sprite
+Sprite::~Sprite(){
+   std::cout << "eliminado sprite";
+   glDeleteBuffers(1, &VBO);
+   glDeleteBuffers(1, &EBO);
+   glDeleteVertexArrays(1, &VAO); 
+
+   glDeleteProgram(shader.ID);
+
+   glDeleteTextures(1, &texture);
+}; 
+
 //Renderiza el sprite
 void Sprite::render(int w_width, int w_heigth){
    shader.use();
@@ -138,7 +151,7 @@ void Sprite::setRotation(float n_rotation){
 };
 
 glm::vec2 Sprite::getPosition(){
-   glm::vec2 position = glm::vec2(xPos, yPos);
+   glm::vec2 position = glm::vec2(matrix[3][0], matrix[3][1]);
 
    return position;
 }

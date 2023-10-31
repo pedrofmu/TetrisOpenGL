@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/2dEngine.dir/src/engine.cpp.o CMakeFiles/2dEngine.dir/src/glad.c.o CMakeFiles/2dEngine.dir/src/main.cpp.o CMakeFiles/2dEngine.dir/src/rendering/shader.cpp.o CMakeFiles/2dEngine.dir/src/rendering/sprite.cpp.o -o 2dEngine  /usr/local/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

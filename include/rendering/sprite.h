@@ -17,6 +17,7 @@ public:
     ~Sprite();
 
     void render(int w_width, int w_heigth);
+
     void setPosition(float nX, float nY);
     void setScale(float n_width, float n_heigth);
     void setRotation(float n_rotation);

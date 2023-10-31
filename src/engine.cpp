@@ -2,9 +2,12 @@
 #include "include/glm/fwd.hpp"
 #include "include/rendering/sprite.h"
 #include <algorithm>
+#include <cstdio>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <functional>
+#include <ostream>
 #include <vector>
 #include <include/glm/glm.hpp>
 #include <include/glm/gtc/matrix_transform.hpp>
@@ -67,6 +70,7 @@ void Engine::Init(){
 
    while(!glfwWindowShouldClose(_window))
    {
+      update();
       render(); 
    }
 
@@ -96,7 +100,13 @@ void Engine::render(){
 //procesar el input
 void Engine::processInput(int key, int action){
    for (size_t i = 0; i < inputCallBackFunctions.size(); i++) {
-      inputCallBackFunctions[i](key, action);
+      inputCallBackFunctions[i]->processInput(key);
+   }
+};
+
+void Engine::update(){
+   for (int i = 0; i < updateCallBackFunctions.size(); i++){
+      updateCallBackFunctions[i]->update();
    }
 };
 
@@ -113,16 +123,43 @@ Sprite* Engine::addSprite(std::string pathToTexture, float xPos, float yPos, flo
 }
 
 void Engine::addSprite(Sprite* sprite){
+   editing_sprites = true;
    sprites.push_back(sprite);
+   editing_sprites = false;
 }
+
+//quitar un sprite y eliminarlo
+void Engine::removeSprite(Sprite* sprite){
+   for (int i = 0; i < sprites.size(); i++){
+      if (sprites[i] == sprite){
+         editing_sprites = true;
+         sprites.erase(sprites.begin() + i);
+         delete sprite;
+         editing_sprites = false;
+         return;
+      }
+   } 
+};
 
 //Parar el engine
 void Engine::stopEngine(){
+   editing_sprites = true;
    glfwSetWindowShouldClose(_window, true);
-   std::cout << glfwWindowShouldClose(_window);
+
+   std::cout << "se llama a la funcion stop";
+   for (Sprite* sprite : sprites)
+   {
+      delete sprite;
+   }
 };
 
 //Añade una funcion al call back del input
-void Engine::addInputCallBack(void(*functionCallback) (int, int)){
-   inputCallBackFunctions.push_back(functionCallback);
+void Engine::addInputCallBack(IInputSubscriber* inputSubscriber){
+   inputCallBackFunctions.push_back(inputSubscriber);
 }
+
+//Añade una funcion al call back del update
+void Engine::addUpdateCallBack(IUpdateSubscriber* updateSubscriber){
+   updateCallBackFunctions.push_back(updateSubscriber);
+};
+
