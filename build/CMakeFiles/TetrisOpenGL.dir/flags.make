@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/pedro_mint/TetrisOpenGL
 
-C_FLAGS = -g
+C_FLAGS = 
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/home/pedro_mint/TetrisOpenGL
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 

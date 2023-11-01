@@ -1,32 +1,32 @@
 [
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/engine.cpp",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/engine.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/engine.cpp"
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/game.cpp",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/game.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/game.cpp"
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/cc  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/glad.c.o -c /home/pedro_mint/TetrisOpenGL/src/glad.c",
+  "command": "/usr/bin/cc  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/glad.c.o -c /home/pedro_mint/TetrisOpenGL/src/glad.c",
   "file": "/home/pedro_mint/TetrisOpenGL/src/glad.c"
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/main.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/main.cpp"
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp"
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
-  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL -g -o CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/sprite.cpp",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/sprite.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/rendering/sprite.cpp"
 }
 ]

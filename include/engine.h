@@ -34,11 +34,13 @@ public:
     void addInputCallBack(IInputSubscriber*);
     void addUpdateCallBack(IUpdateSubscriber*);
 
+    bool isClosed(){ return glfwWindowShouldClose(_window);};
+
 private: 
     std::vector<Sprite*> sprites;
-    GLFWwindow* _window; 
 
     bool editing_sprites = false;
+    GLFWwindow* _window; 
 
     void processInput(int key, int action);
     void render();

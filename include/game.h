@@ -12,6 +12,10 @@ public:
     void processInput(int key) override;
 
 private:
+    int keyToProcess;
+    double lastTime = 0;
+    double timeToPass = 0.25;
+
     Engine* _engine;
     Sprite* prueba;
 };
