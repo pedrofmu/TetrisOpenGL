@@ -129,6 +129,30 @@ TetrisOpenGL/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/build
 .PHONY : TetrisOpenGL/fast
 
+src/board.o: src/board.cpp.o
+.PHONY : src/board.o
+
+# target to build an object file
+src/board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/board.cpp.o
+.PHONY : src/board.cpp.o
+
+src/board.i: src/board.cpp.i
+.PHONY : src/board.i
+
+# target to preprocess a source file
+src/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/board.cpp.i
+.PHONY : src/board.cpp.i
+
+src/board.s: src/board.cpp.s
+.PHONY : src/board.s
+
+# target to generate assembly for a file
+src/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/board.cpp.s
+.PHONY : src/board.cpp.s
+
 src/engine.o: src/engine.cpp.o
 .PHONY : src/engine.o
 
@@ -273,6 +297,30 @@ src/rendering/sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.s
 .PHONY : src/rendering/sprite.cpp.s
 
+src/rendering/tileSprite.o: src/rendering/tileSprite.cpp.o
+.PHONY : src/rendering/tileSprite.o
+
+# target to build an object file
+src/rendering/tileSprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o
+.PHONY : src/rendering/tileSprite.cpp.o
+
+src/rendering/tileSprite.i: src/rendering/tileSprite.cpp.i
+.PHONY : src/rendering/tileSprite.i
+
+# target to preprocess a source file
+src/rendering/tileSprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.i
+.PHONY : src/rendering/tileSprite.cpp.i
+
+src/rendering/tileSprite.s: src/rendering/tileSprite.cpp.s
+.PHONY : src/rendering/tileSprite.s
+
+# target to generate assembly for a file
+src/rendering/tileSprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.s
+.PHONY : src/rendering/tileSprite.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TetrisOpenGL"
+	@echo "... src/board.o"
+	@echo "... src/board.i"
+	@echo "... src/board.s"
 	@echo "... src/engine.o"
 	@echo "... src/engine.i"
 	@echo "... src/engine.s"
@@ -300,6 +351,9 @@ help:
 	@echo "... src/rendering/sprite.o"
 	@echo "... src/rendering/sprite.i"
 	@echo "... src/rendering/sprite.s"
+	@echo "... src/rendering/tileSprite.o"
+	@echo "... src/rendering/tileSprite.i"
+	@echo "... src/rendering/tileSprite.s"
 .PHONY : help
 
 

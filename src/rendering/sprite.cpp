@@ -66,7 +66,8 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
    
    glGenerateMipmap(GL_TEXTURE_2D);
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
    stbi_image_free(data);
 
@@ -89,7 +90,6 @@ Sprite::Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float H
 
 //Destructor de la clase sprite
 Sprite::~Sprite(){
-   std::cout << "eliminado sprite";
    glDeleteBuffers(1, &VBO);
    glDeleteBuffers(1, &EBO);
    glDeleteVertexArrays(1, &VAO); 

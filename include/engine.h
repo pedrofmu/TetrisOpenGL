@@ -34,6 +34,8 @@ public:
     void addInputCallBack(IInputSubscriber*);
     void addUpdateCallBack(IUpdateSubscriber*);
 
+    unsigned int createTexture(std::string pathToTexture);
+
     bool isClosed(){ return glfwWindowShouldClose(_window);};
 
 private: 

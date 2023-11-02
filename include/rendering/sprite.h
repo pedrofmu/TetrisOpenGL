@@ -1,5 +1,5 @@
-#ifndef OBJETO_H
-#define OBJETO_H
+#ifndef SPRITE 
+#define SPRITE
 
 #include "include/glm/fwd.hpp"
 #include "include/rendering/shader.h"
@@ -13,6 +13,13 @@
 
 class Sprite {
 public:
+    Sprite():shader(Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs")){
+        VAO = 0;
+        VBO = 0;
+        EBO = 0;
+        texture = 0;
+    };
+
     Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
     ~Sprite();
 
@@ -25,7 +32,7 @@ public:
     glm::vec2 getPosition();
     glm::vec2 getScale();
     float getRotation();
-private:
+protected:
     unsigned int VAO, VBO, EBO, texture;
     Shader shader;
 
@@ -35,5 +42,4 @@ private:
     float rotation;
 };
 
-#endif // OBJETO_H
-
+#endif 

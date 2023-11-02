@@ -81,12 +81,12 @@ clean: CMakeFiles/TetrisOpenGL.dir/clean
 CMakeFiles/TetrisOpenGL.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target TetrisOpenGL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target TetrisOpenGL"
 .PHONY : CMakeFiles/TetrisOpenGL.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TetrisOpenGL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/TetrisOpenGL/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/TetrisOpenGL/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TetrisOpenGL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro_mint/TetrisOpenGL/build/CMakeFiles 0
 .PHONY : CMakeFiles/TetrisOpenGL.dir/rule

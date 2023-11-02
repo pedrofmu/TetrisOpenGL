@@ -1,6 +1,7 @@
 #include "include/engine.h"
 #include "include/glm/fwd.hpp"
 #include "include/rendering/sprite.h"
+#include "include/rendering/stb_image.h"
 #include <algorithm>
 #include <cstdio>
 #include <glad/glad.h>
@@ -8,6 +9,7 @@
 #include <iostream>
 #include <functional>
 #include <ostream>
+#include <string>
 #include <vector>
 #include <include/glm/glm.hpp>
 #include <include/glm/gtc/matrix_transform.hpp>
@@ -86,7 +88,11 @@ void Engine::render(){
    glClear(GL_COLOR_BUFFER_BIT);
    
    if (sprites.size() == 0)
+   {
+      glfwSwapBuffers(_window);
+      glfwPollEvents();
       return;
+   }
 
    for (Sprite* sprite : sprites)
    {
@@ -152,6 +158,31 @@ void Engine::stopEngine(){
       delete sprite;
    }
 };
+
+//Crea una texutura
+unsigned int Engine::createTexture(std::string pathToTexture)
+{
+   int texWidth, texHeight, nrChannels;
+   stbi_set_flip_vertically_on_load(true);
+   unsigned char *data = stbi_load(pathToTexture.c_str(), &texWidth, &texHeight, &nrChannels, 0);
+
+   unsigned int texture = 0; 
+   glGenTextures(1, &texture);
+    
+   glBindTexture(GL_TEXTURE_2D, texture);
+
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texWidth, texHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+   
+   glGenerateMipmap(GL_TEXTURE_2D);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+   stbi_image_free(data);
+
+   return texture;
+}
 
 //Añade una funcion al call back del input
 void Engine::addInputCallBack(IInputSubscriber* inputSubscriber){

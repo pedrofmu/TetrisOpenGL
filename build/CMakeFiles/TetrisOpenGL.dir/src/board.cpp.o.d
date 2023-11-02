@@ -1,5 +1,6 @@
-CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: \
- /home/pedro_mint/TetrisOpenGL/src/engine.cpp /usr/include/stdc-predef.h \
+CMakeFiles/TetrisOpenGL.dir/src/board.cpp.o: \
+ /home/pedro_mint/TetrisOpenGL/src/board.cpp /usr/include/stdc-predef.h \
+ /home/pedro_mint/TetrisOpenGL/include/board.h \
  /home/pedro_mint/TetrisOpenGL/include/engine.h \
  /home/pedro_mint/TetrisOpenGL/include/glm/ext/vector_float2.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/type_vec2.hpp \
@@ -406,7 +407,7 @@ CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h \
- /usr/include/c++/11/stdlib.h /usr/include/c++/11/algorithm \
+ /home/pedro_mint/TetrisOpenGL/include/piece.h \
+ /usr/include/c++/11/algorithm \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h
