@@ -72,8 +72,11 @@ void Engine::Init(){
 
    while(!glfwWindowShouldClose(_window))
    {
-      update();
-      render(); 
+      if (!pause_thread)
+      {
+         update();
+         render();
+      }
    }
 
    glfwTerminate();

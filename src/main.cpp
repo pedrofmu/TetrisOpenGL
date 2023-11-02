@@ -7,7 +7,7 @@
 #include "include/game.h"
 
 int main(){
-   Engine engine(800, 600);
+   Engine engine(800, 800);
  
    std::thread mainthread(&Engine::Init, &engine);//
     

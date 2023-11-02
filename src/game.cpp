@@ -34,15 +34,15 @@ Game::Game(Engine* engine){
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
    }
 
-   std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
+   _engine->pauseEngine();
    for (int i = 0; i < 10; i++){
       for (int j = 0; j < 20; j++){
+         tiles[i][j] = new TileSprite(texutres[0], 250 + (i * 40), 780  - (j * 40), 40, 40);
          std::this_thread::sleep_for(std::chrono::milliseconds(1));
-         tiles[i][j] = new TileSprite(texutres[1], 250 + (i * 40), 580  - (j * 40), 40, 40);
          _engine->addSprite(tiles[i][j]);
       }
- }
+   }
+   _engine->resumeEngine();
 };
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego

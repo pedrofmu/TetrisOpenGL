@@ -30,6 +30,8 @@ public:
 
     glm::vec2 getWindowSize();
     void stopEngine();
+    void pauseEngine() {pause_thread = true;}
+    void resumeEngine() {pause_thread = false;}
 
     void addInputCallBack(IInputSubscriber*);
     void addUpdateCallBack(IUpdateSubscriber*);
@@ -42,6 +44,8 @@ private:
     std::vector<Sprite*> sprites;
 
     bool editing_sprites = false;
+    bool pause_thread = false;
+
     GLFWwindow* _window; 
 
     void processInput(int key, int action);
