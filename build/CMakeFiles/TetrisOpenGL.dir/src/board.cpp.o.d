@@ -410,4 +410,4 @@ CMakeFiles/TetrisOpenGL.dir/src/board.cpp.o: \
  /home/pedro_mint/TetrisOpenGL/include/piece.h \
  /usr/include/c++/11/algorithm \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/math.h

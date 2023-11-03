@@ -3,6 +3,8 @@
 #include "include/engine.h"
 #include "include/rendering/sprite.h"
 #include "include/piece.h"
+#include "include/rendering/tileSprite.h"
+#include "include/board.h"
 #include <iostream>
 
 class Game : public IUpdateSubscriber , public IInputSubscriber{
@@ -20,7 +22,8 @@ private:
     double timeToPass = 0.25;
 
     Engine* _engine;
-    Sprite* tiles[10][20];
+    TileSprite* tiles[10][20];
+    Board board;
 
     unsigned int texutres[5];
 };

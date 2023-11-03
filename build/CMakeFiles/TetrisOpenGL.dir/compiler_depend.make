@@ -461,7 +461,8 @@ CMakeFiles/TetrisOpenGL.dir/src/board.cpp.o: ../src/board.cpp \
   ../include/piece.h \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
-  /usr/include/c++/11/pstl/execution_defs.h
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/math.h
 
 CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/include/stdc-predef.h \
@@ -1383,10 +1384,10 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: ../src/game.cpp \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../include/game.h \
   ../include/piece.h \
+  ../include/rendering/tileSprite.h \
   ../include/board.h \
   ../include/rendering/stb_image.h \
   /usr/include/c++/11/stdlib.h \
-  ../include/rendering/tileSprite.h \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/ctime \
@@ -1928,7 +1929,9 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../include/game.h \
-  ../include/piece.h
+  ../include/piece.h \
+  ../include/rendering/tileSprite.h \
+  ../include/board.h
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp \
   /usr/include/stdc-predef.h \

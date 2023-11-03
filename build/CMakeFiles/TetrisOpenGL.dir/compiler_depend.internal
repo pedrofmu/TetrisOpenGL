@@ -463,6 +463,7 @@ CMakeFiles/TetrisOpenGL.dir/src/board.cpp.o
  /usr/include/c++/11/algorithm
  /usr/include/c++/11/pstl/glue_algorithm_defs.h
  /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/math.h
 
 CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o
  /home/pedro_mint/TetrisOpenGL/src/engine.cpp
@@ -1386,10 +1387,10 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o
  /usr/include/c++/11/bits/uniform_int_dist.h
  /home/pedro_mint/TetrisOpenGL/include/game.h
  /home/pedro_mint/TetrisOpenGL/include/piece.h
+ /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h
  /home/pedro_mint/TetrisOpenGL/include/board.h
  /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h
  /usr/include/c++/11/stdlib.h
- /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h
  /usr/include/c++/11/chrono
  /usr/include/c++/11/ratio
  /usr/include/c++/11/ctime
@@ -1934,6 +1935,8 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o
  /usr/include/c++/11/bits/uniform_int_dist.h
  /home/pedro_mint/TetrisOpenGL/include/game.h
  /home/pedro_mint/TetrisOpenGL/include/piece.h
+ /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h
+ /home/pedro_mint/TetrisOpenGL/include/board.h
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o
  /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp

@@ -409,4 +409,6 @@ CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: \
  /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h \
  /usr/include/c++/11/stdlib.h /usr/include/c++/11/algorithm \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h

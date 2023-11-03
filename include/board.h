@@ -10,12 +10,9 @@
 //Clase para representar el tablero
 class Board{
 public:
-    Board(int initialWidth,int initialHeigth);
-    Sprite* Init(Engine* engine);
+    Board();
 
     Piece pieces[10][20];
-
-    int width, heigth;
 };
 
 #endif 

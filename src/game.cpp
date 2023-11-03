@@ -4,6 +4,7 @@
 #include "include/board.h"
 #include "include/rendering/stb_image.h"
 #include "include/rendering/tileSprite.h"
+#include "include/board.h"
 #include <GLFW/glfw3.h>
 #include <cstdio>
 #include <iostream>
@@ -13,9 +14,8 @@
 
 //Crear el juego
 Game::Game(Engine* engine){
-   Board board(300, 600);
-
    _engine = engine;
+   board = Board();
 
    _engine->addUpdateCallBack(this);
    _engine->addInputCallBack(this);
@@ -34,15 +34,14 @@ Game::Game(Engine* engine){
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
    }
 
-   _engine->pauseEngine();
    for (int i = 0; i < 10; i++){
       for (int j = 0; j < 20; j++){
-         tiles[i][j] = new TileSprite(texutres[0], 250 + (i * 40), 780  - (j * 40), 40, 40);
+         tiles[i][j] = new TileSprite(texutres[board.pieces[i][j].color], 250 + (i * 40), 780  - (j * 40), 40, 40);
          std::this_thread::sleep_for(std::chrono::milliseconds(1));
          _engine->addSprite(tiles[i][j]);
       }
    }
-   _engine->resumeEngine();
+
 };
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego

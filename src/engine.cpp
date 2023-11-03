@@ -11,6 +11,7 @@
 #include <ostream>
 #include <string>
 #include <vector>
+#include <chrono>
 #include <include/glm/glm.hpp>
 #include <include/glm/gtc/matrix_transform.hpp>
 #include <include/glm/gtc/type_ptr.hpp>
@@ -70,12 +71,34 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 void Engine::Init(){
    glfwMakeContextCurrent(_window);
 
+   // Inicializa el contador de fotogramas
+   int frameCount = 0;
+
+   // Inicializa el temporizador para medir el tiempo transcurrido
+   auto startTime = std::chrono::high_resolution_clock::now();
+
    while(!glfwWindowShouldClose(_window))
    {
       if (!pause_thread)
       {
          update();
          render();
+          // Incrementa el contador de fotogramas
+         frameCount++;
+
+         // Calcula el tiempo transcurrido desde el inicio
+         auto currentTime = std::chrono::high_resolution_clock::now();
+         auto deltaTime = std::chrono::duration_cast<std::chrono::seconds>(currentTime - startTime).count();
+   
+         // Si ha pasado un segundo, muestra los FPS y reinicia el contador
+         if (deltaTime >= 1) {
+            double fps = static_cast<double>(frameCount) / deltaTime;
+            std::cout << "FPS: " << fps << std::endl;
+
+            // Reinicia el contador y el temporizador
+            frameCount = 0;
+            startTime = currentTime;
+         }
       }
    }
 

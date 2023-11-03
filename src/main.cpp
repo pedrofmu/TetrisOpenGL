@@ -9,9 +9,9 @@
 int main(){
    Engine engine(800, 800);
  
-   std::thread mainthread(&Engine::Init, &engine);//
-    
    Game game(&engine);
+
+   std::thread mainthread(&Engine::Init, &engine);//
 
    mainthread.join();
    return 0;
