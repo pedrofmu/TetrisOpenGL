@@ -102,7 +102,9 @@ void Engine::Init(){
       }
    }
 
-   glfwTerminate();
+   stopEngine();
+
+   return;
 };
 
 //Funcion de renderizado
@@ -175,14 +177,17 @@ void Engine::removeSprite(Sprite* sprite){
 
 //Parar el engine
 void Engine::stopEngine(){
-   editing_sprites = true;
+   pauseEngine();
    glfwSetWindowShouldClose(_window, true);
 
-   std::cout << "se llama a la funcion stop";
-   for (Sprite* sprite : sprites)
-   {
-      delete sprite;
+   if (sprites.size() > 0){
+      for (Sprite* sprite : sprites)
+      {
+         delete sprite;
+      }
    }
+
+   glfwTerminate();
 };
 
 //Crea una texutura

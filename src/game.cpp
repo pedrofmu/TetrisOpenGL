@@ -11,6 +11,7 @@
 #include <chrono>
 #include <ostream>
 #include <thread>
+#include "include/movingPiece.h"
 
 //Crear el juego
 Game::Game(Engine* engine){
@@ -42,19 +43,39 @@ Game::Game(Engine* engine){
       }
    }
 
+   movingPiece = new MovingPiece();
 };
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego
 void Game::update(){
    if ((glfwGetTime() - lastTime) >= timeToPass) {
-      //Coloca aquí tu código
       int key = keyToProcess;
       switch (key) {
          case GLFW_KEY_A:
+            movingPiece->currentX--;
          break;
          case GLFW_KEY_D:
+            movingPiece->currentX++;
          break;
       }
+
+      movingPiece->currentY++;
+
+      for (int i = movingPiece->currentX - 1; i <= movingPiece->currentX + 1; i++){
+         for (int j = movingPiece->currentY - 4; j <= movingPiece->currentY - 1; j++){
+            if (movingPiece->currentStruct[i - (movingPiece->currentX - 1)][j - (movingPiece->currentY - 4)] == 1)
+               board.pieces[i][j].color = movingPiece->color;
+            else 
+               board.pieces[i][j].color  = null;
+         }
+      }
+
+      for (int i = 0; i < 10; i++){
+         for (int j = 0; j < 20; j++){
+            tiles[i][j]->setTexutre(texutres[board.pieces[i][j].color]); 
+         }
+      }
+
       lastTime = glfwGetTime();
       keyToProcess = 0;
    }

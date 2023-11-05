@@ -2,11 +2,11 @@
 #define PIECE
 
 enum COLOR{
+    null, 
     red,
     magenta,
     yellow,
     cyan,
-    null 
 };
 
 enum STATE{

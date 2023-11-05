@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TetrisOpenGL.dir/src/glad.c.o.d"
   "CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o"
   "CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o.d"
+  "CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o"
+  "CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o.d"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o.d"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o"

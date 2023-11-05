@@ -1,5 +1,8 @@
-CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: \
- /home/pedro_mint/TetrisOpenGL/src/game.cpp /usr/include/stdc-predef.h \
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: \
+ /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp \
+ /usr/include/stdc-predef.h \
+ /home/pedro_mint/TetrisOpenGL/include/movingPiece.h \
+ /home/pedro_mint/TetrisOpenGL/include/board.h \
  /home/pedro_mint/TetrisOpenGL/include/engine.h \
  /home/pedro_mint/TetrisOpenGL/include/glm/ext/vector_float2.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/type_vec2.hpp \
@@ -406,15 +409,4 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/pedro_mint/TetrisOpenGL/include/game.h \
- /home/pedro_mint/TetrisOpenGL/include/piece.h \
- /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h \
- /home/pedro_mint/TetrisOpenGL/include/board.h \
- /home/pedro_mint/TetrisOpenGL/include/movingPiece.h \
- /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h \
- /usr/include/c++/11/stdlib.h /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/this_thread_sleep.h
+ /home/pedro_mint/TetrisOpenGL/include/piece.h

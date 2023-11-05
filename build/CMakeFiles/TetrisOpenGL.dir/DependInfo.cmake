@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pedro_mint/TetrisOpenGL/src/engine.cpp" "CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o.d"
   "/home/pedro_mint/TetrisOpenGL/src/game.cpp" "CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o.d"
   "/home/pedro_mint/TetrisOpenGL/src/main.cpp" "CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o.d"
+  "/home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp" "CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o.d"
   "/home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp" "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o.d"
   "/home/pedro_mint/TetrisOpenGL/src/rendering/sprite.cpp" "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o.d"
   "/home/pedro_mint/TetrisOpenGL/src/rendering/tileSprite.cpp" "CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o" "gcc" "CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o.d"

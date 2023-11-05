@@ -139,10 +139,24 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TetrisOpenGL.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/TetrisOpenGL/src/main.cpp -o CMakeFiles/TetrisOpenGL.dir/src/main.cpp.s
 
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: CMakeFiles/TetrisOpenGL.dir/flags.make
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: ../src/movingPiece.cpp
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: CMakeFiles/TetrisOpenGL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o -MF CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o.d -o CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp
+
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp > CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.i
+
+CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp -o CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.s
+
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o: CMakeFiles/TetrisOpenGL.dir/flags.make
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o: CMakeFiles/TetrisOpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o -MF CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o.d -o CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.s: cmake_force
 CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o: CMakeFiles/TetrisOpenGL.dir/flags.make
 CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o: ../src/rendering/sprite.cpp
 CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o: CMakeFiles/TetrisOpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o -MF CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o.d -o CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/sprite.cpp
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.s: cmake_force
 CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: CMakeFiles/TetrisOpenGL.dir/flags.make
 CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/tileSprite.cpp
 CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: CMakeFiles/TetrisOpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o -MF CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o.d -o CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/tileSprite.cpp
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.i: cmake_force
@@ -188,6 +202,7 @@ TetrisOpenGL_OBJECTS = \
 "CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o" \
 "CMakeFiles/TetrisOpenGL.dir/src/glad.c.o" \
 "CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o" \
+"CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o" \
 "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o" \
 "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o" \
 "CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o"
@@ -200,6 +215,7 @@ TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/glad.c.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o
+TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o
@@ -208,7 +224,7 @@ TetrisOpenGL: /usr/local/lib/libglfw3.a
 TetrisOpenGL: /usr/lib/x86_64-linux-gnu/librt.a
 TetrisOpenGL: /usr/lib/x86_64-linux-gnu/libm.so
 TetrisOpenGL: CMakeFiles/TetrisOpenGL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TetrisOpenGL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro_mint/TetrisOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TetrisOpenGL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TetrisOpenGL.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

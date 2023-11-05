@@ -249,6 +249,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/movingPiece.o: src/movingPiece.cpp.o
+.PHONY : src/movingPiece.o
+
+# target to build an object file
+src/movingPiece.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o
+.PHONY : src/movingPiece.cpp.o
+
+src/movingPiece.i: src/movingPiece.cpp.i
+.PHONY : src/movingPiece.i
+
+# target to preprocess a source file
+src/movingPiece.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.i
+.PHONY : src/movingPiece.cpp.i
+
+src/movingPiece.s: src/movingPiece.cpp.s
+.PHONY : src/movingPiece.s
+
+# target to generate assembly for a file
+src/movingPiece.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.s
+.PHONY : src/movingPiece.cpp.s
+
 src/rendering/shader.o: src/rendering/shader.cpp.o
 .PHONY : src/rendering/shader.o
 
@@ -345,6 +369,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/movingPiece.o"
+	@echo "... src/movingPiece.i"
+	@echo "... src/movingPiece.s"
 	@echo "... src/rendering/shader.o"
 	@echo "... src/rendering/shader.i"
 	@echo "... src/rendering/shader.s"

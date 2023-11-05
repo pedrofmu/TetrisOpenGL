@@ -26,6 +26,11 @@
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp",
+  "file": "/home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp"
+},
+{
+  "directory": "/home/pedro_mint/TetrisOpenGL/build",
   "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp"
 },

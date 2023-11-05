@@ -53,3 +53,7 @@ TileSprite::TileSprite(unsigned int defaultTexture, float X, float Y, float WIDT
 
    rotationMatrix = glm::mat4(1.0f);
 };
+
+void TileSprite::setTexutre(unsigned int newTexture){
+   texture = newTexture;
+};
