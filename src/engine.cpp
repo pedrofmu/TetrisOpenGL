@@ -31,7 +31,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
    //Esta parte inicializa glfw
    glfwInit();     
-   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 

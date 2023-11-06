@@ -1391,8 +1391,12 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: ../src/game.cpp \
   ../include/rendering/tileSprite.h \
   ../include/board.h \
   ../include/movingPiece.h \
+  ../include/staticPiece.h \
   ../include/rendering/stb_image.h \
   /usr/include/c++/11/stdlib.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/ctime \
@@ -1937,7 +1941,8 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/piece.h \
   ../include/rendering/tileSprite.h \
   ../include/board.h \
-  ../include/movingPiece.h
+  ../include/movingPiece.h \
+  ../include/staticPiece.h
 
 CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: ../src/movingPiece.cpp \
   /usr/include/stdc-predef.h \
@@ -2397,7 +2402,16 @@ CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: ../src/movingPiece.cpp \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  ../include/piece.h
+  ../include/piece.h \
+  /usr/include/c++/11/random \
+  /usr/include/c++/11/bits/random.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+  /usr/include/c++/11/bits/random.tcc \
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp \
   /usr/include/stdc-predef.h \
@@ -3466,6 +3480,12 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 
 ../src/rendering/sprite.cpp:
 
+/usr/include/c++/11/bits/stl_numeric.h:
+
+/usr/include/c++/11/bits/random.h:
+
+/usr/include/c++/11/random:
+
 ../src/glad.c:
 
 /usr/include/c++/11/bits/unique_ptr.h:
@@ -3560,6 +3580,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 
 ../include/glm/ext/quaternion_relational.hpp:
 
+/usr/include/c++/11/numeric:
+
 ../include/glm/ext/quaternion_common.inl:
 
 ../include/glm/ext/quaternion_geometric.inl:
@@ -3585,6 +3607,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 ../include/glm/detail/type_half.inl:
 
 ../include/glm/detail/type_half.hpp:
+
+/usr/include/c++/11/bit:
 
 ../include/glm/packing.hpp:
 
@@ -3623,6 +3647,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 ../include/glm/detail/type_mat4x3.hpp:
 
 ../include/glm/mat4x3.hpp:
+
+../include/staticPiece.h:
 
 ../include/glm/ext/matrix_float4x2_precision.hpp:
 
@@ -3781,6 +3807,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 ../include/glm/ext/vector_int3_sized.hpp:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
+
+/usr/include/c++/11/pstl/glue_numeric_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
@@ -4162,6 +4190,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
+/usr/include/c++/11/bits/random.tcc:
+
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/alloca.h:
@@ -4281,6 +4311,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h:
 
 /usr/include/c++/11/bits/enable_special_members.h:
 

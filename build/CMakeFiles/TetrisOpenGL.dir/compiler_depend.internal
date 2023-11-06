@@ -1394,8 +1394,12 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o
  /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h
  /home/pedro_mint/TetrisOpenGL/include/board.h
  /home/pedro_mint/TetrisOpenGL/include/movingPiece.h
+ /home/pedro_mint/TetrisOpenGL/include/staticPiece.h
  /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h
  /usr/include/c++/11/stdlib.h
+ /usr/include/c++/11/algorithm
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h
  /usr/include/c++/11/chrono
  /usr/include/c++/11/ratio
  /usr/include/c++/11/ctime
@@ -1943,6 +1947,7 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o
  /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h
  /home/pedro_mint/TetrisOpenGL/include/board.h
  /home/pedro_mint/TetrisOpenGL/include/movingPiece.h
+ /home/pedro_mint/TetrisOpenGL/include/staticPiece.h
 
 CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o
  /home/pedro_mint/TetrisOpenGL/src/movingPiece.cpp
@@ -2404,6 +2409,15 @@ CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o
  /usr/include/c++/11/bits/stl_tempbuf.h
  /usr/include/c++/11/bits/uniform_int_dist.h
  /home/pedro_mint/TetrisOpenGL/include/piece.h
+ /usr/include/c++/11/random
+ /usr/include/c++/11/bits/random.h
+ /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h
+ /usr/include/c++/11/bits/random.tcc
+ /usr/include/c++/11/numeric
+ /usr/include/c++/11/bits/stl_numeric.h
+ /usr/include/c++/11/bit
+ /usr/include/c++/11/pstl/glue_numeric_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o
  /home/pedro_mint/TetrisOpenGL/src/rendering/shader.cpp

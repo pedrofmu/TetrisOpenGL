@@ -411,8 +411,11 @@ CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: \
  /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h \
  /home/pedro_mint/TetrisOpenGL/include/board.h \
  /home/pedro_mint/TetrisOpenGL/include/movingPiece.h \
+ /home/pedro_mint/TetrisOpenGL/include/staticPiece.h \
  /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h \
- /usr/include/c++/11/stdlib.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/stdlib.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \

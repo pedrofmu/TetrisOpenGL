@@ -412,4 +412,5 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: \
  /home/pedro_mint/TetrisOpenGL/include/piece.h \
  /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h \
  /home/pedro_mint/TetrisOpenGL/include/board.h \
- /home/pedro_mint/TetrisOpenGL/include/movingPiece.h
+ /home/pedro_mint/TetrisOpenGL/include/movingPiece.h \
+ /home/pedro_mint/TetrisOpenGL/include/staticPiece.h

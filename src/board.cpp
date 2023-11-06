@@ -11,7 +11,7 @@ Board::Board(){
    {
       for (int j = 0; j < 20; j++)
       {
-         pieces[i][j] = Piece(null, empty);
+         pieces[i][j] = Piece(empty);
       }
    }
 }

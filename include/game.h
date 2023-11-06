@@ -6,7 +6,9 @@
 #include "include/rendering/tileSprite.h"
 #include "include/board.h"
 #include "include/movingPiece.h"
+#include "include/staticPiece.h"
 #include <iostream>
+#include <vector>
 
 class Game : public IUpdateSubscriber , public IInputSubscriber{
 public:
@@ -24,8 +26,12 @@ private:
 
     Engine* _engine;
     TileSprite* tiles[10][20];
+    std::vector<StaticPiece> staticPieces;
     Board board;
     MovingPiece* movingPiece;
+
+    void movePiece();
+    void placePiece();
 
     unsigned int texutres[5];
 };
