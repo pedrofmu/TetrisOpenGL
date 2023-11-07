@@ -18,6 +18,7 @@
 
 //Crear el juego
 Game::Game(Engine* engine){
+   //Inicializa las variables necesarias
    _engine = engine;
    board = Board();
    staticPieces = std::vector<StaticPiece>();
@@ -25,6 +26,7 @@ Game::Game(Engine* engine){
    _engine->addUpdateCallBack(this);
    _engine->addInputCallBack(this);
 
+   //Crea las texturas
    std::string pathToTextures[]{
       "../assets/textures/emptyTile.png", 
       "../assets/textures/redTile.png", 
@@ -39,6 +41,7 @@ Game::Game(Engine* engine){
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
    }
 
+   //Inizializa el tablero
    for (int i = 0; i < 10; i++){
       for (int j = 0; j < 20; j++){
          tiles[i][j] = new TileSprite(texutres[board.pieces[i][j].color], 250 + (i * 40), 780  - (j * 40), 40, 40);
@@ -60,11 +63,11 @@ void Game::update(){
          }
       }
       
-      movePiece();
-
       for(int i = 0; i < staticPieces.size(); i++){
          board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
       }
+
+      movePiece();
 
       //Actualiza las texutras
       for (int i = 0; i < 10; i++){
@@ -87,23 +90,34 @@ void Game::movePiece(){
    //procesa el input
    switch (keyToProcess) {
       case GLFW_KEY_A:
-          movingPiece->currentX--;
+         movingPiece->currentX--;
       break;
       case GLFW_KEY_D:
          movingPiece->currentX++;
       break;
    }
 
+   //Baja la pieza una casilla
    movingPiece->currentY++;
-      
-   if (movingPiece->currentY >= 21){
-      placePiece();
-      return;
-   }
-
+    
+   //Crea los indices donde iterar
    startX = movingPiece->currentX - 1;
    startY = movingPiece->currentY - 4;
 
+   //Comprobar si hay que hacer estatica la pieza
+   if (movingPiece->currentY >= 20){
+      placePiece();
+      return;
+   }else{
+      for (int i = startX; i <= startX + 2; i++){
+         if (board.pieces[i][movingPiece->currentY].color != empty && movingPiece->currentStruct[i - startX][3] == 1){
+            placePiece();
+            return;
+         }
+      }
+   }
+
+   //Establecer las casillas de la pieza
    for (int i = startX; i <= startX + 2; i++){
       for (int j = startY; j <= startY + 3; j++){
          if (!(1 && j >= 0 && i >= 0))
@@ -114,10 +128,12 @@ void Game::movePiece(){
    }
 }
 
+//Para una pieza en su lugar
 void Game::placePiece(){
+
    for (int i = startX; i <= startX + 2; i++){
       for (int j = startY; j <= startY + 3; j++){
-         if (!(1 && j >= 0 && i >= 0))
+         if (!(j >= 0 && i >= 0))
             continue;
          if (movingPiece->currentStruct[i - (startX)][j - (startY)] == 1)
             staticPieces.push_back(StaticPiece(i, j, movingPiece->color));
