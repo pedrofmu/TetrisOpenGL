@@ -10,9 +10,11 @@ public:
 
     int currentX, currentY;
 
-    int currentStruct[3][4];
+    int currentStruct[4][4];
 
     COLOR color;
+
+    void rotateLeft();
 };
 
 #endif

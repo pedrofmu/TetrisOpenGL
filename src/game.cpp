@@ -98,6 +98,10 @@ void Game::movePiece(){
                movingPiece->currentX--;
          }
       break;
+      case GLFW_KEY_SPACE:
+         movingPiece->rotateLeft();
+         std::cout << "a";
+      break;
       case GLFW_KEY_D:
          if(movingPiece->currentStruct[2][2] == 1 || movingPiece->currentStruct[2][3] == 1){
             if (movingPiece->currentX  + 1 < 9)
@@ -121,7 +125,7 @@ void Game::movePiece(){
       placePiece();
       return;
    }else{
-      for (int i = startX; i <= startX + 2; i++){
+      for (int i = startX; i <= startX + 3; i++){
          if (board.pieces[i][movingPiece->currentY].color != empty && movingPiece->currentStruct[i - startX][3] == 1){
             placePiece();
             return;
@@ -135,12 +139,13 @@ void Game::movePiece(){
    }
 
    //Establecer las casillas de la pieza
-   for (int i = startX; i <= startX + 2; i++){
+   for (int i = startX; i <= startX + 3; i++){
       for (int j = startY; j <= startY + 3; j++){
          if (!(1 && j >= 0 && i >= 0))
             continue;
-         if (movingPiece->currentStruct[i - (startX)][j - (startY)] == 1)
+         if (movingPiece->currentStruct[i - (startX)][j - (startY)] == 1){
             board.pieces[i][j].color = movingPiece->color;
+         }
       }
    }
 }
@@ -163,16 +168,11 @@ void Game::placePiece(){
 
    //Comprobar victoría
    for (int j = 0; j < 20; j++){
-      COLOR rowColor = board.pieces[0][j].color;
-
-      if (rowColor == empty)
-         continue;
-
       bool hasToDelete = true;
       for(int i = 1; i < 10; i++){
-         if (board.pieces[i][j].color != rowColor){
+         if (board.pieces[i][j].color == empty){
             hasToDelete = false;
-            continue;
+            break;
          }
       }
 
@@ -186,13 +186,17 @@ void Game::placePiece(){
 
 //Delete a row
 void Game::deleteRow(int column){
+   std::vector<int> elementsToRemove = std::vector<int>();
    for (int i = 0; i < 10; i++){
-      board.pieces[i][column].color = empty;
-
       for(int a = 0; a < staticPieces.size(); a++){
          if (staticPieces[a].x == i && staticPieces[a].y == column){
-            staticPieces[a].color = empty;
+            staticPieces.erase(staticPieces.begin() + a);
          }
       }
+   }
+
+   for(int a = 0; a < staticPieces.size(); a++){
+      if (staticPieces[a].y <= column)
+         staticPieces[a].y++;
    }
 }
