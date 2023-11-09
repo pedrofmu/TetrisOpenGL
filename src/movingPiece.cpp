@@ -83,7 +83,7 @@ MovingPiece::MovingPiece(){
    currentX = 4;
    currentY = 0;
 
-   std::uniform_int_distribution<int> colorRandom(1, 4);  
+   std::uniform_int_distribution<int> colorRandom(1, 1);  
 
    int theColor = colorRandom(gen);
 

@@ -32,6 +32,7 @@ private:
 
     void movePiece();
     void placePiece();
+    void deleteRow(int row);
 
     unsigned int texutres[5];
 };

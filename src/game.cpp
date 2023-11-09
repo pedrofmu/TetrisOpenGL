@@ -90,10 +90,22 @@ void Game::movePiece(){
    //procesa el input
    switch (keyToProcess) {
       case GLFW_KEY_A:
-         movingPiece->currentX--;
+         if(movingPiece->currentStruct[0][2] == 1 || movingPiece->currentStruct[0][3] == 1){
+            if (movingPiece->currentX - 1 > 0)
+               movingPiece->currentX--;
+         }else{
+            if (movingPiece->currentX > 0)
+               movingPiece->currentX--;
+         }
       break;
       case GLFW_KEY_D:
-         movingPiece->currentX++;
+         if(movingPiece->currentStruct[2][2] == 1 || movingPiece->currentStruct[2][3] == 1){
+            if (movingPiece->currentX  + 1 < 9)
+               movingPiece->currentX++;
+         }else{
+            if (movingPiece->currentX < 9)
+               movingPiece->currentX++;
+         }
       break;
    }
 
@@ -114,6 +126,11 @@ void Game::movePiece(){
             placePiece();
             return;
          }
+
+         if (board.pieces[i][movingPiece->currentY - 1].color != empty && movingPiece->currentStruct[i - startX][2] == 1){
+            placePiece();
+            return;
+         }
       }
    }
 
@@ -130,7 +147,6 @@ void Game::movePiece(){
 
 //Para una pieza en su lugar
 void Game::placePiece(){
-
    for (int i = startX; i <= startX + 2; i++){
       for (int j = startY; j <= startY + 3; j++){
          if (!(j >= 0 && i >= 0))
@@ -140,6 +156,43 @@ void Game::placePiece(){
       }
    }
 
+   for(int i = 0; i < staticPieces.size(); i++){
+      board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
+   }
+
+
+   //Comprobar victoría
+   for (int j = 0; j < 20; j++){
+      COLOR rowColor = board.pieces[0][j].color;
+
+      if (rowColor == empty)
+         continue;
+
+      bool hasToDelete = true;
+      for(int i = 1; i < 10; i++){
+         if (board.pieces[i][j].color != rowColor){
+            hasToDelete = false;
+            continue;
+         }
+      }
+
+      if (hasToDelete)
+         deleteRow(j);
+   }
+
    delete movingPiece;
    movingPiece = new MovingPiece();
+}
+
+//Delete a row
+void Game::deleteRow(int column){
+   for (int i = 0; i < 10; i++){
+      board.pieces[i][column].color = empty;
+
+      for(int a = 0; a < staticPieces.size(); a++){
+         if (staticPieces[a].x == i && staticPieces[a].y == column){
+            staticPieces[a].color = empty;
+         }
+      }
+   }
 }
