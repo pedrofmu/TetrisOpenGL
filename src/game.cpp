@@ -69,6 +69,7 @@ void Game::update(){
 
       movePiece();
 
+
       //Actualiza las texutras
       for (int i = 0; i < 10; i++){
          for (int j = 0; j < 20; j++){
@@ -85,82 +86,61 @@ void Game::processInput(int key){
    keyToProcess = key;
 };
 
-int startX, startY;
 void Game::movePiece(){
+   //Baja la pieza una casilla
+   movingPiece->currentY++;
+
    //procesa el input
    switch (keyToProcess) {
       case GLFW_KEY_A:
-         if(movingPiece->currentStruct[0][2] == 1 || movingPiece->currentStruct[0][3] == 1){
-            if (movingPiece->currentX - 1 > 0)
-               movingPiece->currentX--;
-         }else{
-            if (movingPiece->currentX > 0)
-               movingPiece->currentX--;
-         }
+         if (isValidMove(movingPiece->currentX - 1, movingPiece->currentY, movingPiece->currentStruct))
+            movingPiece->currentX--;
       break;
       case GLFW_KEY_SPACE:
-         movingPiece->rotateLeft();
-         std::cout << "a";
+         movingPiece->rotateLeft(board.pieces);
       break;
       case GLFW_KEY_D:
-         if(movingPiece->currentStruct[2][2] == 1 || movingPiece->currentStruct[2][3] == 1){
-            if (movingPiece->currentX  + 1 < 9)
-               movingPiece->currentX++;
-         }else{
-            if (movingPiece->currentX < 9)
-               movingPiece->currentX++;
-         }
-      break;
+         if (isValidMove(movingPiece->currentX + 1, movingPiece->currentY, movingPiece->currentStruct))
+            movingPiece->currentX++;
+     break;
    }
-
-   //Baja la pieza una casilla
-   movingPiece->currentY++;
     
-   //Crea los indices donde iterar
-   startX = movingPiece->currentX - 1;
-   startY = movingPiece->currentY - 4;
-
    //Comprobar si hay que hacer estatica la pieza
-   if (movingPiece->currentY >= 20){
+   if (movingPiece->currentY + movingPiece->currentStruct.size() >= 20){
       placePiece();
       return;
    }else{
-      for (int i = startX; i <= startX + 3; i++){
-         if (board.pieces[i][movingPiece->currentY].color != empty && movingPiece->currentStruct[i - startX][3] == 1){
-            placePiece();
-            return;
-         }
-
-         if (board.pieces[i][movingPiece->currentY - 1].color != empty && movingPiece->currentStruct[i - startX][2] == 1){
-            placePiece();
-            return;
-         }
+      for (int j = 0; j < movingPiece->currentStruct.size(); j++){
+        for (int i = 0; i < movingPiece->currentStruct.size(); i++){
+           if (board.pieces[movingPiece->currentX + i][movingPiece->currentY + j + 1].color != empty && movingPiece->currentStruct[i][j] == 1){
+              placePiece();
+              return;
+           }
+        }
       }
+      
    }
 
    //Establecer las casillas de la pieza
-   for (int i = startX; i <= startX + 3; i++){
-      for (int j = startY; j <= startY + 3; j++){
-         if (!(1 && j >= 0 && i >= 0))
-            continue;
-         if (movingPiece->currentStruct[i - (startX)][j - (startY)] == 1){
-            board.pieces[i][j].color = movingPiece->color;
+   for (int i = 0; i < movingPiece->currentStruct.size(); i++){
+      for (int j = 0; j < movingPiece->currentStruct[i].size(); j++){
+         if (movingPiece->currentStruct[i][j] == 1){
+            board.pieces[movingPiece->currentX + i][movingPiece->currentY + j].color = movingPiece->color;
          }
       }
    }
+
 }
 
 //Para una pieza en su lugar
 void Game::placePiece(){
-   for (int i = startX; i <= startX + 2; i++){
-      for (int j = startY; j <= startY + 3; j++){
-         if (!(j >= 0 && i >= 0))
-            continue;
-         if (movingPiece->currentStruct[i - (startX)][j - (startY)] == 1)
-            staticPieces.push_back(StaticPiece(i, j, movingPiece->color));
+   for (int i = 0; i < movingPiece->currentStruct.size(); i++){
+      for (int j = 0; j < movingPiece->currentStruct[i].size(); j++){
+         if (movingPiece->currentStruct[i][j] == 1){
+            staticPieces.push_back(StaticPiece(movingPiece->currentX + i,movingPiece->currentY + j, movingPiece->color));
+         }
       }
    }
-
    for(int i = 0; i < staticPieces.size(); i++){
       board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
    }
@@ -199,4 +179,22 @@ void Game::deleteRow(int column){
       if (staticPieces[a].y <= column)
          staticPieces[a].y++;
    }
+}
+
+bool Game::isValidMove(int newX, int newY, std::vector<std::vector<int>>& structure){
+   for(int i = 0; i < structure.size(); i++){
+      for (int j = 0; j < structure.size(); j++){
+         if (structure[i][j] == 1){
+            if (newX + i > 9 || newX + i < 0){
+               return false;
+            }
+
+            if (board.pieces[newX + i][newY + j].color != empty){
+               return false;
+            }
+         }
+      }
+   }
+   
+   return true;
 }

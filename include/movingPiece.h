@@ -4,17 +4,19 @@
 #include "include/board.h"
 #include "include/piece.h"
 
+#include <iostream>
+
 class MovingPiece{
 public:
     MovingPiece();
 
     int currentX, currentY;
 
-    int currentStruct[4][4];
+    std::vector<std::vector<int>> currentStruct;
 
     COLOR color;
 
-    void rotateLeft();
+    void rotateLeft(Piece currentBoard[10][20]);
 };
 
 #endif

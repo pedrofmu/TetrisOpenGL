@@ -35,5 +35,7 @@ private:
     void deleteRow(int row);
 
     unsigned int texutres[5];
+
+    bool isValidMove(int newX, int newY, std::vector<std::vector<int>>& structure);
 };
 #endif 
