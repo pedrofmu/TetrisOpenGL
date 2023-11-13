@@ -46,6 +46,8 @@ const int ZStruct[3][3] =
    }; 
 
 bool canRotate = true;
+bool canLeft = true;
+bool canRigth = true;
 
 MovingPiece::MovingPiece(){
    std::random_device rd;
@@ -99,7 +101,7 @@ MovingPiece::MovingPiece(){
    }
 
    currentX = 5 - (currentStruct.size()/2);
-   currentY = -1;
+   currentY = 0;
 
    std::uniform_int_distribution<int> colorRandom(1, 4);  
 
@@ -170,5 +172,37 @@ void MovingPiece::rotateLeft(Piece currentBoard[10][20]){
       canRotate = true;
    };
    std::thread tarea(stablishCanRotate);
+   tarea.detach();
+}
+
+void MovingPiece::moveRigth(){
+   if (!canRigth)
+      return;
+
+   currentX++;
+
+   canRigth = false;
+   auto stablishCanRigth = [](){
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      canRigth = true; 
+   };
+   std::thread tarea(stablishCanRigth);
+   tarea.detach();
+}
+
+void MovingPiece::moveLeft(){
+   if (!canLeft)
+      return;
+
+   currentX--;
+
+   canLeft = false;
+   auto stablishCanLeft = [](){
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      canLeft = true; 
+   };
+   std::thread tarea(stablishCanLeft);
    tarea.detach();
 }

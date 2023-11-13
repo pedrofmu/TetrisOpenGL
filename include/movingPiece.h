@@ -17,6 +17,8 @@ public:
     COLOR color;
 
     void rotateLeft(Piece currentBoard[10][20]);
+    void moveLeft();
+    void moveRigth();
 };
 
 #endif

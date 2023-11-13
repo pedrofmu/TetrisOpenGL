@@ -55,30 +55,57 @@ Game::Game(Engine* engine){
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego
 void Game::update(){
-   if ((glfwGetTime() - lastTime) >= timeToPass) {
-      //limpa las pieces
-      for (int i = 0; i < 10; i++){
-         for (int j = 0; j < 20; j++){
-            board.pieces[i][j].color = empty;
-         }
+   //limpa las pieces
+   for (int i = 0; i < 10; i++){
+      for (int j = 0; j < 20; j++){
+         board.pieces[i][j].color = empty;
       }
-      
-      for(int i = 0; i < staticPieces.size(); i++){
-         board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
-      }
+   }
+   
+   //Dibujar las piezas estaticas
+   for(int i = 0; i < staticPieces.size(); i++){
+      board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
+   }
+   
+   //procesa el input
+   switch (keyToProcess) {
+      case GLFW_KEY_A:
+         printf("a");
+         if (isValidMove(movingPiece->currentX - 1, movingPiece->currentY, movingPiece->currentStruct))
+            movingPiece->moveLeft();
+      break;
+      case GLFW_KEY_SPACE:
+         movingPiece->rotateLeft(board.pieces);
+      break;
+      case GLFW_KEY_D:
+         std::cout << movingPiece->currentY << std::endl; 
+         if (isValidMove(movingPiece->currentX + 1, movingPiece->currentY, movingPiece->currentStruct))
+            movingPiece->moveRigth();
+     break;
+   }
+   keyToProcess = 0;
 
+   //El bucle de movimiento
+   if ((glfwGetTime() - lastTime) >= timeToPass) {
       movePiece();
 
+      lastTime = glfwGetTime();
+   }
 
-      //Actualiza las texutras
-      for (int i = 0; i < 10; i++){
-         for (int j = 0; j < 20; j++){
-            tiles[i][j]->setTexutre(texutres[board.pieces[i][j].color]); 
+   //Establecer las casillas de la pieza
+   for (int i = 0; i < movingPiece->currentStruct.size(); i++){
+      for (int j = 0; j < movingPiece->currentStruct[i].size(); j++){
+         if (movingPiece->currentStruct[i][j] == 1){
+            board.pieces[movingPiece->currentX + i][movingPiece->currentY + j].color = movingPiece->color;
          }
       }
-
-      lastTime = glfwGetTime();
-      keyToProcess = 0;
+   }
+      
+   //Actualiza las texutras
+   for (int i = 0; i < 10; i++){
+      for (int j = 0; j < 20; j++){
+         tiles[i][j]->setTexutre(texutres[board.pieces[i][j].color]); 
+      }
    }
 };
 
@@ -89,22 +116,7 @@ void Game::processInput(int key){
 void Game::movePiece(){
    //Baja la pieza una casilla
    movingPiece->currentY++;
-
-   //procesa el input
-   switch (keyToProcess) {
-      case GLFW_KEY_A:
-         if (isValidMove(movingPiece->currentX - 1, movingPiece->currentY, movingPiece->currentStruct))
-            movingPiece->currentX--;
-      break;
-      case GLFW_KEY_SPACE:
-         movingPiece->rotateLeft(board.pieces);
-      break;
-      case GLFW_KEY_D:
-         if (isValidMove(movingPiece->currentX + 1, movingPiece->currentY, movingPiece->currentStruct))
-            movingPiece->currentX++;
-     break;
-   }
-    
+   
    //Comprobar si hay que hacer estatica la pieza
    if (movingPiece->currentY + movingPiece->currentStruct.size() >= 20){
       placePiece();
@@ -120,20 +132,15 @@ void Game::movePiece(){
       }
       
    }
-
-   //Establecer las casillas de la pieza
-   for (int i = 0; i < movingPiece->currentStruct.size(); i++){
-      for (int j = 0; j < movingPiece->currentStruct[i].size(); j++){
-         if (movingPiece->currentStruct[i][j] == 1){
-            board.pieces[movingPiece->currentX + i][movingPiece->currentY + j].color = movingPiece->color;
-         }
-      }
-   }
-
 }
 
-//Para una pieza en su lugar
+//Poner una pieza en su lugar
 void Game::placePiece(){
+   if (movingPiece->currentY < 1){
+      printf("Has perdido");
+   }
+
+   //Añadir piezas estaticas
    for (int i = 0; i < movingPiece->currentStruct.size(); i++){
       for (int j = 0; j < movingPiece->currentStruct[i].size(); j++){
          if (movingPiece->currentStruct[i][j] == 1){
@@ -141,12 +148,13 @@ void Game::placePiece(){
          }
       }
    }
+
    for(int i = 0; i < staticPieces.size(); i++){
       board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
    }
 
 
-   //Comprobar victoría
+   //Comprobar eliminar piezas 
    for (int j = 0; j < 20; j++){
       bool hasToDelete = true;
       for(int i = 1; i < 10; i++){
