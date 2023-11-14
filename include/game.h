@@ -12,7 +12,7 @@
 
 class Game : public IUpdateSubscriber , public IInputSubscriber{
 public:
-    Game(Engine* engine);
+    Game(Engine* mainEngine);
     void Init();   
 
     void update() override;
@@ -24,7 +24,7 @@ private:
     double lastTime = 0;
     double timeToPass = 0.25;
 
-    Engine* _engine;
+    Engine* engine;
     TileSprite* tiles[10][20];
     std::vector<StaticPiece> staticPieces;
     Board board;
@@ -33,6 +33,7 @@ private:
     void movePiece();
     void placePiece();
     void deleteRow(int row);
+    void gameOver();
 
     unsigned int texutres[5];
 

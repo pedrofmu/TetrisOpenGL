@@ -10,7 +10,7 @@
 #include "include/piece.h"
 
 
-const int IStruct[4][4] =
+const int ISTRUCT[4][4] =
    {  
       {0,0,0,0},
       {0,0,0,0},
@@ -18,27 +18,27 @@ const int IStruct[4][4] =
       {0,0,0,0}
    }; 
 
-const int OStruct[2][2] =
+const int OSTRUCT[2][2] =
    {  
       {1,1},
       {1,1},
    }; 
 
-const int TStruct[3][3] =
+const int TSTRUCT[3][3] =
    {  
       {0,0,1},
       {0,1,1},
       {0,0,1}
    }; 
 
-const int LStruct[3][3] =
+const int LSTRUCT[3][3] =
    {  
       {0,0,0},
       {0,0,1},
       {1,1,1},
    }; 
 
-const int ZStruct[3][3] =
+const int ZSTRUCT[3][3] =
    {  
       {0,0,0},
       {0,1,1},
@@ -48,7 +48,6 @@ const int ZStruct[3][3] =
 bool canRotate = true;
 bool canLeft = true;
 bool canRigth = true;
-
 MovingPiece::MovingPiece(){
    std::random_device rd;
    std::mt19937 gen(rd());
@@ -62,7 +61,7 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(4, std::vector<int>(4, 0));
         for (int i = 0; i < 4; i++){
            for (int j = 0; j < 4; j++){
-              currentStruct[i][j] = IStruct[i][j];
+              currentStruct[i][j] = ISTRUCT[i][j];
            }
         }
      break;
@@ -70,7 +69,7 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(2, std::vector<int>(2, 0));
         for (int i = 0; i < 2; i++){
            for (int j = 0; j < 2; j++){
-              currentStruct[i][j] = OStruct[i][j];
+              currentStruct[i][j] = OSTRUCT[i][j];
            }
         }
      break;
@@ -78,7 +77,7 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(3, std::vector<int>(3, 0));
         for (int i = 0; i < 3; i++){
            for (int j = 0; j < 3; j++){
-              currentStruct[i][j] = TStruct[i][j];
+              currentStruct[i][j] = TSTRUCT[i][j];
            }
         }
      break;
@@ -86,7 +85,7 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(3, std::vector<int>(3, 0));
         for (int i = 0; i < 3; i++){
            for (int j = 0; j < 3; j++){
-              currentStruct[i][j] = LStruct[i][j];
+              currentStruct[i][j] = LSTRUCT[i][j];
            }
         }
      break;
@@ -94,7 +93,7 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(3, std::vector<int>(3, 0));
         for (int i = 0; i < 3; i++){
            for (int j = 0; j < 3; j++){
-              currentStruct[i][j] = ZStruct[i][j];
+              currentStruct[i][j] = ZSTRUCT[i][j];
            }
         }
      break;

@@ -928,7 +928,8 @@ CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: ../src/engine.cpp \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/ctime \
-  /usr/include/c++/11/bits/parse_numbers.h
+  /usr/include/c++/11/bits/parse_numbers.h \
+  ../include/rendering/gltext.h
 
 CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o: ../src/game.cpp \
   /usr/include/stdc-predef.h \
@@ -3502,6 +3503,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 /usr/include/c++/11/bits/unique_ptr.h:
 
 ../include/game.h:
+
+../include/rendering/gltext.h:
 
 /usr/include/c++/11/bits/parse_numbers.h:
 

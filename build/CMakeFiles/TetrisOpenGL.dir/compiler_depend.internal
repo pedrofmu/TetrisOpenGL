@@ -931,6 +931,7 @@ CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o
  /usr/include/c++/11/ratio
  /usr/include/c++/11/ctime
  /usr/include/c++/11/bits/parse_numbers.h
+ /home/pedro_mint/TetrisOpenGL/include/rendering/gltext.h
 
 CMakeFiles/TetrisOpenGL.dir/src/game.cpp.o
  /home/pedro_mint/TetrisOpenGL/src/game.cpp

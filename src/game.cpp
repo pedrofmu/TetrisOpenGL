@@ -16,15 +16,17 @@
 #include <vector>
 #include "include/movingPiece.h"
 
+
+
 //Crear el juego
-Game::Game(Engine* engine){
+Game::Game(Engine* mainEngine){
    //Inicializa las variables necesarias
-   _engine = engine;
+   engine = mainEngine;
    board = Board();
    staticPieces = std::vector<StaticPiece>();
 
-   _engine->addUpdateCallBack(this);
-   _engine->addInputCallBack(this);
+   engine->addUpdateCallBack(this);
+   engine->addInputCallBack(this);
 
    //Crea las texturas
    std::string pathToTextures[]{
@@ -35,9 +37,10 @@ Game::Game(Engine* engine){
       "../assets/textures/cyanTile.png"
    };
 
+   //Crea las texturas
    for (int i = 0; i < 5; i++)
    {
-      texutres[i] = _engine->createTexture(pathToTextures[i]);
+      texutres[i] = engine->createTexture(pathToTextures[i]);
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
    }
 
@@ -46,7 +49,7 @@ Game::Game(Engine* engine){
       for (int j = 0; j < 20; j++){
          tiles[i][j] = new TileSprite(texutres[board.pieces[i][j].color], 250 + (i * 40), 780  - (j * 40), 40, 40);
          std::this_thread::sleep_for(std::chrono::milliseconds(1));
-         _engine->addSprite(tiles[i][j]);
+         engine->addSprite(tiles[i][j]);
       }
    }
 
@@ -70,7 +73,6 @@ void Game::update(){
    //procesa el input
    switch (keyToProcess) {
       case GLFW_KEY_A:
-         printf("a");
          if (isValidMove(movingPiece->currentX - 1, movingPiece->currentY, movingPiece->currentStruct))
             movingPiece->moveLeft();
       break;
@@ -78,10 +80,9 @@ void Game::update(){
          movingPiece->rotateLeft(board.pieces);
       break;
       case GLFW_KEY_D:
-         std::cout << movingPiece->currentY << std::endl; 
          if (isValidMove(movingPiece->currentX + 1, movingPiece->currentY, movingPiece->currentStruct))
             movingPiece->moveRigth();
-     break;
+      break;
    }
    keyToProcess = 0;
 
@@ -109,10 +110,12 @@ void Game::update(){
    }
 };
 
+//Guarda el input
 void Game::processInput(int key){
    keyToProcess = key;
 };
 
+//Mueve la pieza hacia abajo
 void Game::movePiece(){
    //Baja la pieza una casilla
    movingPiece->currentY++;
@@ -136,8 +139,10 @@ void Game::movePiece(){
 
 //Poner una pieza en su lugar
 void Game::placePiece(){
-   if (movingPiece->currentY < 1){
-      printf("Has perdido");
+   //Detectar si has perdido
+   if (movingPiece->currentY <= movingPiece->currentStruct.size()){
+      gameOver();
+      return;
    }
 
    //Añadir piezas estaticas
@@ -149,10 +154,10 @@ void Game::placePiece(){
       }
    }
 
+   //Dibuja las piezas estaticas
    for(int i = 0; i < staticPieces.size(); i++){
       board.pieces[staticPieces[i].x][staticPieces[i].y].color = staticPieces[i].color;
    }
-
 
    //Comprobar eliminar piezas 
    for (int j = 0; j < 20; j++){
@@ -205,4 +210,23 @@ bool Game::isValidMove(int newX, int newY, std::vector<std::vector<int>>& struct
    }
    
    return true;
+}
+
+void Game::gameOver(){
+   engine->pauseEngine();
+
+   //Dibujar las piezas estaticas
+   staticPieces.clear(); 
+
+   //limpa las pieces
+   for (int i = 0; i < 10; i++){
+      for (int j = 0; j < 20; j++){
+         board.pieces[i][j].color = empty;
+      }
+   }
+
+   delete movingPiece;
+   movingPiece = new MovingPiece();
+
+   engine->resumeEngine();
 }

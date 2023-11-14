@@ -411,4 +411,5 @@ CMakeFiles/TetrisOpenGL.dir/src/engine.cpp.o: \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /home/pedro_mint/TetrisOpenGL/include/rendering/gltext.h

@@ -16,6 +16,9 @@
 #include <include/glm/gtc/matrix_transform.hpp>
 #include <include/glm/gtc/type_ptr.hpp>
 
+#define GLT_IMPLEMENTATION
+#include "include/rendering/gltext.h"
+
 int w_width;
 int w_heigth;
 
@@ -114,7 +117,7 @@ void Engine::render(){
 
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
-   
+
    if (sprites.size() == 0)
    {
       glfwSwapBuffers(_window);
