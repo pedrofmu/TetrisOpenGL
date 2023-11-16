@@ -14,14 +14,9 @@
 #include <chrono>
 #include <include/glm/glm.hpp>
 #include <include/glm/gtc/matrix_transform.hpp>
-#include <include/glm/gtc/type_ptr.hpp>
-
-#define GLT_IMPLEMENTATION
-#include "include/rendering/gltext.h"
 
 int w_width;
 int w_heigth;
-
 //Cambia el viewport segun se redimensione la pantalla
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -37,6 +32,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
    //Esta parte se encarga de inicializar la ventana 
    w_width = window_width;
@@ -68,6 +64,9 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
    glfwSetWindowUserPointer(this->_window, this);
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
+
+   text = gltCreateText(); 
+   gltSetText(text, "HOLA MUNDO");
 };
 
 //inicializa el bucle de renderizado

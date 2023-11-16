@@ -16,8 +16,6 @@
 #include <vector>
 #include "include/movingPiece.h"
 
-
-
 //Crear el juego
 Game::Game(Engine* mainEngine){
    //Inicializa las variables necesarias

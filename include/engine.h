@@ -9,6 +9,9 @@
 #include <functional>
 #include <vector>
 
+#define GLT_IMPLEMENTATION
+#include "include/rendering/gltext.h"
+
 class IUpdateSubscriber{
 public:
     virtual void update() = 0;
@@ -63,5 +66,7 @@ private:
             engine->processInput(key, action);
         }
     }        
+
+    GLTtext *text;
 };
 #endif

@@ -11,7 +11,7 @@ int main(){
  
    Game game(&engine);
 
-   std::thread mainthread(&Engine::Init, &engine);//
+   std::thread mainthread(&Engine::Init, &engine);
 
    mainthread.join();
    return 0;

@@ -9,7 +9,6 @@
 #include <utility>
 #include "include/piece.h"
 
-
 const int ISTRUCT[4][4] =
    {  
       {0,0,0,0},
@@ -38,12 +37,26 @@ const int LSTRUCT[3][3] =
       {1,1,1},
    }; 
 
+const int JSTRUCT[3][3] =
+   {  
+      {1,1,1},
+      {0,0,1},
+      {0,0,0},
+   };
+
 const int ZSTRUCT[3][3] =
    {  
       {0,0,0},
       {0,1,1},
       {1,1,0},
    }; 
+
+const int SSTRUCT[3][3] =
+   {  
+      {0,0,0},
+      {1,1,0},
+      {0,1,1},
+   };
 
 bool canRotate = true;
 bool canLeft = true;
@@ -52,7 +65,7 @@ MovingPiece::MovingPiece(){
    std::random_device rd;
    std::mt19937 gen(rd());
 
-   std::uniform_int_distribution<int> structRandom(0, 4);  
+   std::uniform_int_distribution<int> structRandom(0, 6);  
 
    int structToUse = structRandom(gen);
 
@@ -93,7 +106,23 @@ MovingPiece::MovingPiece(){
         currentStruct.resize(3, std::vector<int>(3, 0));
         for (int i = 0; i < 3; i++){
            for (int j = 0; j < 3; j++){
+              currentStruct[i][j] = JSTRUCT[i][j];
+           }
+        }
+     break;
+     case 5:
+        currentStruct.resize(3, std::vector<int>(3, 0));
+        for (int i = 0; i < 3; i++){
+           for (int j = 0; j < 3; j++){
               currentStruct[i][j] = ZSTRUCT[i][j];
+           }
+        }
+     break;
+     case 6:
+        currentStruct.resize(3, std::vector<int>(3, 0));
+        for (int i = 0; i < 3; i++){
+           for (int j = 0; j < 3; j++){
+              currentStruct[i][j] = SSTRUCT[i][j];
            }
         }
      break;

@@ -408,6 +408,8 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
+ /home/pedro_mint/TetrisOpenGL/include/rendering/gltext.h \
+ /usr/include/c++/11/stdlib.h \
  /home/pedro_mint/TetrisOpenGL/include/game.h \
  /home/pedro_mint/TetrisOpenGL/include/piece.h \
  /home/pedro_mint/TetrisOpenGL/include/rendering/tileSprite.h \

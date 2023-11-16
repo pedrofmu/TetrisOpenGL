@@ -1,5 +1,5 @@
 # 2dEngine
 
-Project of a simple graphic engine.
+Remaking tetris with OpenGL.
 
 In progress.
