@@ -3,14 +3,13 @@
 
 #include "include/glm/ext/vector_float2.hpp"
 #include "include/rendering/sprite.h"
+#include "include/rendering/text.h"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <functional>
 #include <vector>
-
-#define GLT_IMPLEMENTATION
-#include "include/rendering/gltext.h"
 
 class IUpdateSubscriber{
 public:
@@ -67,6 +66,6 @@ private:
         }
     }        
 
-    GLTtext *text;
+    Text *tmp;
 };
 #endif

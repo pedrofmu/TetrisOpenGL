@@ -321,6 +321,30 @@ src/rendering/sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.s
 .PHONY : src/rendering/sprite.cpp.s
 
+src/rendering/text.o: src/rendering/text.cpp.o
+.PHONY : src/rendering/text.o
+
+# target to build an object file
+src/rendering/text.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o
+.PHONY : src/rendering/text.cpp.o
+
+src/rendering/text.i: src/rendering/text.cpp.i
+.PHONY : src/rendering/text.i
+
+# target to preprocess a source file
+src/rendering/text.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.i
+.PHONY : src/rendering/text.cpp.i
+
+src/rendering/text.s: src/rendering/text.cpp.s
+.PHONY : src/rendering/text.s
+
+# target to generate assembly for a file
+src/rendering/text.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TetrisOpenGL.dir/build.make CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.s
+.PHONY : src/rendering/text.cpp.s
+
 src/rendering/tileSprite.o: src/rendering/tileSprite.cpp.o
 .PHONY : src/rendering/tileSprite.o
 
@@ -378,6 +402,9 @@ help:
 	@echo "... src/rendering/sprite.o"
 	@echo "... src/rendering/sprite.i"
 	@echo "... src/rendering/sprite.s"
+	@echo "... src/rendering/text.o"
+	@echo "... src/rendering/text.i"
+	@echo "... src/rendering/text.s"
 	@echo "... src/rendering/tileSprite.o"
 	@echo "... src/rendering/tileSprite.i"
 	@echo "... src/rendering/tileSprite.s"

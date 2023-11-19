@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/shader.cpp.o.d"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/sprite.cpp.o.d"
+  "CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o"
+  "CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o.d"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o"
   "CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o.d"
   "TetrisOpenGL"

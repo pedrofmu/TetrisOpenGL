@@ -41,6 +41,11 @@
 },
 {
   "directory": "/home/pedro_mint/TetrisOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/text.cpp",
+  "file": "/home/pedro_mint/TetrisOpenGL/src/rendering/text.cpp"
+},
+{
+  "directory": "/home/pedro_mint/TetrisOpenGL/build",
   "command": "/usr/bin/c++  -I/home/pedro_mint/TetrisOpenGL  -o CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o -c /home/pedro_mint/TetrisOpenGL/src/rendering/tileSprite.cpp",
   "file": "/home/pedro_mint/TetrisOpenGL/src/rendering/tileSprite.cpp"
 }

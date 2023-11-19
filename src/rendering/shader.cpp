@@ -47,6 +47,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
         cout << "ERROR READING THE SHADER FILES" << endl;
     }
 
+
     //convierte las srings que almacenaban el codigo en un array de char (esto pq es como lo lee openGL
     const char* vShaderCode = vertexCode.c_str();
     const char* fShaderCode = fragmentCode.c_str();

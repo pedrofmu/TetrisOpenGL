@@ -26,13 +26,16 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 //El constructor de la clase Engine
-Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
+Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()), tmp(nullptr){
    //Esta parte inicializa glfw
    glfwInit();     
-   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
+   glfwWindowHint(GLFW_ALPHA_BITS, 8);
+   glfwWindowHint(GLFW_DEPTH_BITS, 24);
+   glfwWindowHint(GLFW_STENCIL_BITS, 8);
 
    //Esta parte se encarga de inicializar la ventana 
    w_width = window_width;
@@ -65,8 +68,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
 
-   text = gltCreateText(); 
-   gltSetText(text, "HOLA MUNDO");
+   tmp = new Text("Hola mundo");
 };
 
 //inicializa el bucle de renderizado
@@ -128,6 +130,8 @@ void Engine::render(){
    {
       sprite->render(w_width, w_heigth);
    }
+
+   tmp->render();
 
    glfwSwapBuffers(_window);
    glfwPollEvents();
