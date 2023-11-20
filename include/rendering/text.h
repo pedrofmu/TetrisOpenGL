@@ -18,7 +18,9 @@ public:
 
    void setText(std::string newText);
 
-   void render();
+   void render(float width, float height);
+
+   int x, y;
 private:
    std::string text;
    Shader shader;

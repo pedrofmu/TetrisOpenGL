@@ -1,5 +1,9 @@
 #include "include/rendering/text.h"
 
+#include "include/glm/glm.hpp"
+#include "include/glm/gtc/matrix_transform.hpp"
+#include "include/glm/gtc/type_ptr.hpp"
+
 #include "include/rendering/stb_image.h"
 
 #include <stdio.h>
@@ -50,11 +54,36 @@ Text::Text(std::string initialText): shader(Shader("../assets/shader/textShader.
    texture = 0;
 }
 
-void Text::render(){
+void Text::render(float width, float height){
+   glm::mat4 matrix = glm::mat4(1.0f);
+   //Escala
+   matrix[0][0] = 50;
+   matrix[1][1] = 50;
+
+   //Posicion
+   matrix[3][0] = 20;
+   matrix[3][1] = 20;
+
    shader.use();
 
    for (int i = 0; i < characters.size(); i++){
       glBindVertexArray(characters[i].VAO);
+      //Cambiar la posicion
+      matrix[3][0] = matrix[3][0] + matrix[0][0];
+      
+      //Normalizar la matrix
+      glm::mat4 normalizedMatrix = matrix;
+      normalizedMatrix[3][0] = (normalizedMatrix[3][0] / (width * 0.5)) - 1.0;
+      normalizedMatrix[3][1] = (normalizedMatrix[3][0] / (height * 0.5)) - 1.0;
+
+      normalizedMatrix[0][0] = normalizedMatrix[0][0] / (width * 0.5);
+      normalizedMatrix[1][1] = normalizedMatrix[1][1] / (height * 0.5);
+      
+      //Pasar el uniform
+      unsigned int transformLoc = glGetUniformLocation(shader.ID, "transform");
+      glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(normalizedMatrix));
+      
+      //Dibujar
       glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
    }
 }

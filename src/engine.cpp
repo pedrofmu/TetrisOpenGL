@@ -131,7 +131,7 @@ void Engine::render(){
       sprite->render(w_width, w_heigth);
    }
 
-   tmp->render();
+   tmp->render(w_width, w_heigth);
 
    glfwSwapBuffers(_window);
    glfwPollEvents();
