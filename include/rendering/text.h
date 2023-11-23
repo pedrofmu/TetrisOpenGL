@@ -14,7 +14,7 @@ struct Character{
    
 class Text{
 public:
-   Text(std::string initialText);
+   Text(std::string initialText, unsigned int bitmapFont);
 
    void setText(std::string newText);
 

@@ -68,7 +68,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
 
-   tmp = new Text("Hola mundo");
+   tmp = new Text("Hola mundo", createRGBTexture("../assets/textures/b.png"));
 };
 
 //inicializa el bucle de renderizado
@@ -197,7 +197,7 @@ void Engine::stopEngine(){
 };
 
 //Crea una texutura
-unsigned int Engine::createTexture(std::string pathToTexture)
+unsigned int Engine::createRGBATexture(std::string pathToTexture)
 {
    int texWidth, texHeight, nrChannels;
    stbi_set_flip_vertically_on_load(true);
@@ -209,6 +209,31 @@ unsigned int Engine::createTexture(std::string pathToTexture)
    glBindTexture(GL_TEXTURE_2D, texture);
 
    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texWidth, texHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+   
+   glGenerateMipmap(GL_TEXTURE_2D);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+   stbi_image_free(data);
+
+   return texture;
+}
+
+//Crea una texutura
+unsigned int Engine::createRGBTexture(std::string pathToTexture)
+{
+   int texWidth, texHeight, nrChannels;
+   stbi_set_flip_vertically_on_load(true);
+   unsigned char *data = stbi_load(pathToTexture.c_str(), &texWidth, &texHeight, &nrChannels, 0);
+
+   unsigned int texture = 0; 
+   glGenTextures(1, &texture);
+    
+   glBindTexture(GL_TEXTURE_2D, texture);
+
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWidth, texHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
    

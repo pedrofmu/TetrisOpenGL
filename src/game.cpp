@@ -38,7 +38,7 @@ Game::Game(Engine* mainEngine){
    //Crea las texturas
    for (int i = 0; i < 5; i++)
    {
-      texutres[i] = engine->createTexture(pathToTextures[i]);
+      texutres[i] = engine->createRGBATexture(pathToTextures[i]);
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
    }
 
