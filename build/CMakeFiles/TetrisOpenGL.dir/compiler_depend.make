@@ -1946,7 +1946,9 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/rendering/tileSprite.h \
   ../include/board.h \
   ../include/movingPiece.h \
-  ../include/staticPiece.h
+  ../include/staticPiece.h \
+  ../include/myLibs/hasMap.h \
+  /usr/include/c++/11/stdlib.h
 
 CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: ../src/movingPiece.cpp \
   /usr/include/stdc-predef.h \
@@ -4446,6 +4448,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 ../include/glm/detail/compute_common.hpp:
 
 /usr/include/features.h:
+
+../include/myLibs/hasMap.h:
 
 /usr/include/c++/11/bits/char_traits.h:
 
