@@ -1947,7 +1947,7 @@ CMakeFiles/TetrisOpenGL.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/board.h \
   ../include/movingPiece.h \
   ../include/staticPiece.h \
-  ../include/myLibs/hasMap.h \
+  ../include/myLibs/hashMap.h \
   /usr/include/c++/11/stdlib.h
 
 CMakeFiles/TetrisOpenGL.dir/src/movingPiece.cpp.o: ../src/movingPiece.cpp \
@@ -3254,6 +3254,18 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  ../include/glm/ext/vector_float2.hpp \
+  ../include/glm/detail/type_vec2.hpp \
+  ../include/glm/detail/qualifier.hpp \
+  ../include/glm/detail/setup.hpp \
+  /usr/include/c++/11/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/11/cstddef \
+  ../include/glm/simd/platform.h \
+  ../include/glm/detail/type_vec2.inl \
+  ../include/glm/detail/compute_vector_relational.hpp \
+  ../include/glm/detail/setup.hpp \
+  /usr/include/c++/11/limits \
   ../include/glm/glm.hpp \
   ../include/glm/detail/_fixes.hpp \
   /usr/include/c++/11/cmath \
@@ -3268,7 +3280,6 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/c++/11/bits/specfun.h \
-  /usr/include/c++/11/limits \
   /usr/include/c++/11/tr1/gamma.tcc \
   /usr/include/c++/11/tr1/special_function_util.h \
   /usr/include/c++/11/tr1/bessel_function.tcc \
@@ -3282,10 +3293,6 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
   ../include/glm/detail/setup.hpp \
-  /usr/include/c++/11/cassert \
-  /usr/include/assert.h \
-  /usr/include/c++/11/cstddef \
-  ../include/glm/simd/platform.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -3299,16 +3306,9 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   /usr/include/c++/11/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   ../include/glm/fwd.hpp \
-  ../include/glm/detail/qualifier.hpp \
-  ../include/glm/detail/setup.hpp \
   ../include/glm/vec2.hpp \
   ../include/glm/ext/vector_bool2.hpp \
-  ../include/glm/detail/type_vec2.hpp \
-  ../include/glm/detail/type_vec2.inl \
-  ../include/glm/detail/compute_vector_relational.hpp \
-  ../include/glm/detail/setup.hpp \
   ../include/glm/ext/vector_bool2_precision.hpp \
-  ../include/glm/ext/vector_float2.hpp \
   ../include/glm/ext/vector_float2_precision.hpp \
   ../include/glm/ext/vector_double2.hpp \
   ../include/glm/ext/vector_double2_precision.hpp \
@@ -3432,6 +3432,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   ../include/glm/packing.hpp \
   ../include/glm/detail/func_packing.inl \
   ../include/glm/detail/type_half.hpp \
+  ../include/glm/detail/setup.hpp \
   ../include/glm/detail/type_half.inl \
   ../include/glm/integer.hpp \
   ../include/glm/detail/func_integer.inl \
@@ -3491,6 +3492,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: ../src/rendering/text.cpp 
   ../include/glm/gtc/type_ptr.inl \
   ../include/rendering/stb_image.h \
   /usr/include/c++/11/stdlib.h \
+  ../include/myLibs/hashMap.h \
   /usr/local/include/GLFW/glfw3.h
 
 CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/tileSprite.cpp \
@@ -3940,6 +3942,8 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 /usr/include/c++/11/bits/random.h:
 
 /usr/include/c++/11/random:
+
+../include/myLibs/hashMap.h:
 
 ../src/glad.c:
 
@@ -4448,8 +4452,6 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/tileSprite.cpp.o: ../src/rendering/til
 ../include/glm/detail/compute_common.hpp:
 
 /usr/include/features.h:
-
-../include/myLibs/hasMap.h:
 
 /usr/include/c++/11/bits/char_traits.h:
 

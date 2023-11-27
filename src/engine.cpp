@@ -2,6 +2,7 @@
 #include "include/glm/fwd.hpp"
 #include "include/rendering/sprite.h"
 #include "include/rendering/stb_image.h"
+#include "include/rendering/text.h"
 #include <algorithm>
 #include <cstdio>
 #include <glad/glad.h>
@@ -26,7 +27,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 //El constructor de la clase Engine
-Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()), tmp(nullptr){
+Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()), backgroundShader(nullptr){
    //Esta parte inicializa glfw
    glfwInit();     
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -68,7 +69,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
 
-   tmp = new Text("Hola mundo", createRGBTexture("../assets/textures/b.png"));
+   backgroundShader = new Shader("../assets/shader/backgroundShader.vs", "../assets/shader/backgroundShader.fs"); 
 };
 
 //inicializa el bucle de renderizado
@@ -119,20 +120,17 @@ void Engine::render(){
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
 
-   if (sprites.size() == 0)
-   {
-      glfwSwapBuffers(_window);
-      glfwPollEvents();
-      return;
+   if (sprites.size() != 0){
+      for (Sprite* sprite : sprites){
+         sprite->render(w_width, w_heigth);
+      }
    }
-
-   for (Sprite* sprite : sprites)
-   {
-      sprite->render(w_width, w_heigth);
+   if (texts.size() != 0){
+      for (Text* text : texts){
+         text->render(w_width, w_heigth);
+      }
    }
-
-   tmp->render(w_width, w_heigth);
-
+   
    glfwSwapBuffers(_window);
    glfwPollEvents();
 }
@@ -166,6 +164,14 @@ void Engine::addSprite(Sprite* sprite){
    editing_sprites = true;
    sprites.push_back(sprite);
    editing_sprites = false;
+}
+
+Text* Engine::addText(std::string text, int xPos, int yPos, int height){
+   Text* textToAdd = new Text(text, xPos, yPos, height,createRGBTexture("../assets/textures/bitmapFont.png"));
+
+   texts.push_back(textToAdd);
+
+   return textToAdd;
 }
 
 //quitar un sprite y eliminarlo

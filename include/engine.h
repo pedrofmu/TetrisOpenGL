@@ -29,6 +29,7 @@ public:
     Sprite* addSprite(std::string pathToTexture,float xPos, float yPos, float width, float heigth);
     void addSprite(Sprite* sprite);
     void removeSprite(Sprite* sprite);
+    Text* addText(std::string text, int xPos, int yPos, int height);
 
     glm::vec2 getWindowSize();
     void stopEngine();
@@ -45,6 +46,9 @@ public:
 
 private: 
     std::vector<Sprite*> sprites;
+    std::vector<Text*> texts;
+
+    Shader* backgroundShader;
 
     bool editing_sprites = false;
     bool pause_thread = false;
@@ -66,7 +70,5 @@ private:
             engine->processInput(key, action);
         }
     }        
-
-    Text *tmp;
 };
 #endif

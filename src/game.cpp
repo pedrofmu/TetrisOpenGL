@@ -4,6 +4,7 @@
 #include "include/board.h"
 #include "include/piece.h"
 #include "include/rendering/stb_image.h"
+#include "include/rendering/text.h"
 #include "include/rendering/tileSprite.h"
 #include "include/board.h"
 #include <GLFW/glfw3.h>
@@ -12,12 +13,13 @@
 #include <iostream>
 #include <chrono>
 #include <ostream>
+#include <string>
 #include <thread>
 #include <vector>
 #include "include/movingPiece.h"
 
 //Crear el juego
-Game::Game(Engine* mainEngine){
+Game::Game(Engine* mainEngine): textRenderer(mainEngine->addText("0", 25, 750, 40)){
    //Inicializa las variables necesarias
    engine = mainEngine;
    board = Board();
@@ -52,6 +54,7 @@ Game::Game(Engine* mainEngine){
    }
 
    movingPiece = new MovingPiece();
+   points = 0;
 };
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego
@@ -106,6 +109,8 @@ void Game::update(){
          tiles[i][j]->setTexutre(texutres[board.pieces[i][j].color]); 
       }
    }
+
+   textRenderer->setText(std::to_string(points));
 };
 
 //Guarda el input
@@ -167,8 +172,10 @@ void Game::placePiece(){
          }
       }
 
-      if (hasToDelete)
+      if (hasToDelete){
          deleteRow(j);
+         points += 5;
+      }
    }
 
    delete movingPiece;
@@ -225,6 +232,8 @@ void Game::gameOver(){
 
    delete movingPiece;
    movingPiece = new MovingPiece();
+
+   points = 0;
 
    engine->resumeEngine();
 }

@@ -159,6 +159,17 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/vector_float2.hpp \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/type_vec2.hpp \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/qualifier.hpp \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/setup.hpp \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
+ /usr/include/c++/11/cstddef \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/../simd/platform.h \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/type_vec2.inl \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/./compute_vector_relational.hpp \
+ /home/pedro_mint/TetrisOpenGL/include/glm/ext/../detail/./setup.hpp \
+ /usr/include/c++/11/limits \
  /home/pedro_mint/TetrisOpenGL/include/glm/glm.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/_fixes.hpp \
  /usr/include/c++/11/cmath /usr/include/math.h \
@@ -171,8 +182,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
- /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
  /usr/include/c++/11/tr1/bessel_function.tcc \
  /usr/include/c++/11/tr1/beta_function.tcc \
@@ -185,9 +195,6 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/setup.hpp \
- /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/include/c++/11/cstddef \
- /home/pedro_mint/TetrisOpenGL/include/glm/detail/../simd/platform.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -199,16 +206,9 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/11/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /home/pedro_mint/TetrisOpenGL/include/glm/fwd.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/detail/qualifier.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/detail/setup.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/vec2.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_bool2.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/./ext/../detail/type_vec2.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/./ext/../detail/type_vec2.inl \
- /home/pedro_mint/TetrisOpenGL/include/glm/./ext/../detail/./compute_vector_relational.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/./ext/../detail/./setup.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_bool2_precision.hpp \
- /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_float2.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_float2_precision.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_double2.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/./ext/vector_double2_precision.hpp \
@@ -332,6 +332,7 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /home/pedro_mint/TetrisOpenGL/include/glm/packing.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/func_packing.inl \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/type_half.hpp \
+ /home/pedro_mint/TetrisOpenGL/include/glm/detail/setup.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/type_half.inl \
  /home/pedro_mint/TetrisOpenGL/include/glm/integer.hpp \
  /home/pedro_mint/TetrisOpenGL/include/glm/detail/func_integer.inl \
@@ -388,4 +389,6 @@ CMakeFiles/TetrisOpenGL.dir/src/rendering/text.cpp.o: \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /home/pedro_mint/TetrisOpenGL/include/glm/gtc/type_ptr.inl \
  /home/pedro_mint/TetrisOpenGL/include/rendering/stb_image.h \
- /usr/include/c++/11/stdlib.h /usr/local/include/GLFW/glfw3.h
+ /usr/include/c++/11/stdlib.h \
+ /home/pedro_mint/TetrisOpenGL/include/myLibs/hashMap.h \
+ /usr/local/include/GLFW/glfw3.h
