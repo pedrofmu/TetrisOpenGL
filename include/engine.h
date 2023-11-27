@@ -48,7 +48,7 @@ private:
     std::vector<Sprite*> sprites;
     std::vector<Text*> texts;
 
-    Shader* backgroundShader;
+    Sprite* background;
 
     bool editing_sprites = false;
     bool pause_thread = false;

@@ -27,7 +27,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 //El constructor de la clase Engine
-Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()), backgroundShader(nullptr){
+Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*>()){
    //Esta parte inicializa glfw
    glfwInit();     
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -69,7 +69,9 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
 
-   backgroundShader = new Shader("../assets/shader/backgroundShader.vs", "../assets/shader/backgroundShader.fs"); 
+   Shader backgroundShader = Shader("../assets/shader/backgroundShader.vs", "../assets/shader/backgroundShader.fs"); 
+
+   background = new Sprite("../assets/textures/background.png", w_width * 0.5, w_heigth * 0.5, w_width, w_heigth, backgroundShader);
 };
 
 //inicializa el bucle de renderizado
@@ -119,6 +121,8 @@ void Engine::render(){
 
    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
+
+   background->render(w_width, w_heigth);
 
    if (sprites.size() != 0){
       for (Sprite* sprite : sprites){

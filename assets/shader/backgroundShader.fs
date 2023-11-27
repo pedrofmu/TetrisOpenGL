@@ -1,10 +1,14 @@
 #version 330 core
 out vec4 FragColor;
-in float y; 
 
-uniform vec3 backgroundColor; // Color del fondo
+in vec2 VertexTexCoord; // Asegúrate de que coincida el nombre
+in float y;
 
-void main() {
-    vec4 color = vec4(0, y * backgroundColor.g, 0, 1.0);
-    FragColor = color;
+uniform sampler2D texture1;
+
+void main()
+{
+    vec4 color = texture(texture1, VertexTexCoord) * sin(y);
+    FragColor = color; // Asegúrate de usar VertexTexCoord
 }
+

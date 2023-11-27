@@ -21,6 +21,7 @@ public:
     };
 
     Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH);
+    Sprite(std::string pathToTexture, float X, float Y, float WIDTH, float HEIGTH, Shader shader);
     ~Sprite();
 
     void render(int w_width, int w_heigth);

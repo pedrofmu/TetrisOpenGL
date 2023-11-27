@@ -195,7 +195,7 @@ void MovingPiece::rotateLeft(Piece currentBoard[10][20]){
 
    canRotate = false;
    auto stablishCanRotate = [](){
-      std::this_thread::sleep_for(std::chrono::milliseconds(300));
+      std::this_thread::sleep_for(std::chrono::milliseconds(200));
 
       canRotate = true;
    };
@@ -211,7 +211,7 @@ void MovingPiece::moveRigth(){
 
    canRigth = false;
    auto stablishCanRigth = [](){
-      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      std::this_thread::sleep_for(std::chrono::milliseconds(70));
 
       canRigth = true; 
    };
@@ -227,7 +227,7 @@ void MovingPiece::moveLeft(){
 
    canLeft = false;
    auto stablishCanLeft = [](){
-      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      std::this_thread::sleep_for(std::chrono::milliseconds(70));
 
       canLeft = true; 
    };

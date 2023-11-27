@@ -47,7 +47,7 @@ Game::Game(Engine* mainEngine): textRenderer(mainEngine->addText("0", 25, 750, 4
    //Inizializa el tablero
    for (int i = 0; i < 10; i++){
       for (int j = 0; j < 20; j++){
-         tiles[i][j] = new TileSprite(texutres[board.pieces[i][j].color], 250 + (i * 40), 780  - (j * 40), 40, 40);
+         tiles[i][j] = new TileSprite(texutres[board.pieces[i][j].color], 420 - (5*40) + (i * 40), 780  - (j * 40), 40, 40);
          std::this_thread::sleep_for(std::chrono::milliseconds(1));
          engine->addSprite(tiles[i][j]);
       }
@@ -124,19 +124,18 @@ void Game::movePiece(){
    movingPiece->currentY++;
    
    //Comprobar si hay que hacer estatica la pieza
-   if (movingPiece->currentY + movingPiece->currentStruct.size() >= 20){
-      placePiece();
-      return;
-   }else{
-      for (int j = 0; j < movingPiece->currentStruct.size(); j++){
-        for (int i = 0; i < movingPiece->currentStruct.size(); i++){
-           if (board.pieces[movingPiece->currentX + i][movingPiece->currentY + j + 1].color != empty && movingPiece->currentStruct[i][j] == 1){
-              placePiece();
-              return;
+   for (int j = 0; j < movingPiece->currentStruct.size(); j++){
+     for (int i = 0; i < movingPiece->currentStruct.size(); i++){
+        if ( movingPiece->currentStruct[i][j] == 1){
+           if(board.pieces[movingPiece->currentX + i][movingPiece->currentY + j + 1].color != empty){
+               placePiece();
+               return;
+           }else if (movingPiece->currentY + j + 1 >= 20){
+               placePiece();
+               return;
            }
         }
-      }
-      
+     }
    }
 }
 
