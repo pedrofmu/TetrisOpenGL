@@ -59,6 +59,7 @@ Game::Game(Engine* mainEngine): textRenderer(mainEngine->addText("0", 25, 750, 4
 
 //funcion update, gracias al estar en el call back se ejecuta cada "tick" del juego
 void Game::update(){
+   timeToPass = 0.25;
    //limpa las pieces
    for (int i = 0; i < 10; i++){
       for (int j = 0; j < 20; j++){
@@ -83,6 +84,9 @@ void Game::update(){
       case GLFW_KEY_D:
          if (isValidMove(movingPiece->currentX + 1, movingPiece->currentY, movingPiece->currentStruct))
             movingPiece->moveRigth();
+      break;
+      case GLFW_KEY_S:
+         timeToPass = 0.015;
       break;
    }
    keyToProcess = 0;

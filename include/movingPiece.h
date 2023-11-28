@@ -19,6 +19,7 @@ public:
     void rotateLeft(Piece currentBoard[10][20]);
     void moveLeft();
     void moveRigth();
+    bool moveDown(Board *board);
 };
 
 #endif

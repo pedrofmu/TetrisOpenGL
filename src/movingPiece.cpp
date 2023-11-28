@@ -7,6 +7,7 @@
 #include <random>
 #include <thread>
 #include <utility>
+#include <vector>
 #include "include/piece.h"
 
 const int ISTRUCT[4][4] =
@@ -61,6 +62,8 @@ const int SSTRUCT[3][3] =
 bool canRotate = true;
 bool canLeft = true;
 bool canRigth = true;
+bool canGoDown = true;
+
 MovingPiece::MovingPiece(){
    std::random_device rd;
    std::mt19937 gen(rd());
@@ -232,5 +235,45 @@ void MovingPiece::moveLeft(){
       canLeft = true; 
    };
    std::thread tarea(stablishCanLeft);
+   tarea.detach();
+}
+
+bool MovingPiece::moveDown(Board *board){
+   if (!canGoDown)
+      return false;
+
+   canGoDown = false;
+
+   auto stablishCanDown = [](){
+      std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
+      canGoDown = true; 
+   };
+
+   while (true){
+      currentY++;
+
+      for (int j = 0; j < currentStruct.size(); j++){
+        for (int i = 0; i < currentStruct.size(); i++){
+           if (currentStruct[i][j] == 1){
+              if(board->pieces[currentX + i][currentY + j + 1].color != empty){
+                  std::thread tarea(stablishCanDown);
+                  tarea.detach();
+
+                  return true;
+              }else if (currentY + j + 1 >= 20){
+                  std::thread tarea(stablishCanDown);
+                  tarea.detach();
+
+                  return true;
+              }
+           }
+        }
+      }
+   }
+
+   return false;
+
+   std::thread tarea(stablishCanDown);
    tarea.detach();
 }
