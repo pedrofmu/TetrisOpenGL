@@ -15,5 +15,5 @@ void main()
   
   VertexTexCoord =  vec2(aTexCoord.x, aTexCoord.y);
 
-  y = sin(aPos.y) + 0.5;
+  y = sin(position.y) + cos(position.y) + 0.4;
 }

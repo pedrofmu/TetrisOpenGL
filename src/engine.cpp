@@ -34,9 +34,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-   glfwWindowHint(GLFW_ALPHA_BITS, 8);
-   glfwWindowHint(GLFW_DEPTH_BITS, 24);
-   glfwWindowHint(GLFW_STENCIL_BITS, 8);
+   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
    //Esta parte se encarga de inicializar la ventana 
    w_width = window_width;
@@ -69,7 +67,7 @@ Engine::Engine(int window_width, int window_heigth): sprites(std::vector<Sprite*
 
    glfwSetKeyCallback(this->_window, Engine::key_callback_static);
 
-   Shader backgroundShader = Shader("../assets/shader/backgroundShader.vs", "../assets/shader/backgroundShader.fs"); 
+   Shader backgroundShader = Shader("../assets/shader/shader.vs", "../assets/shader/shader.fs"); 
 
    background = new Sprite("../assets/textures/background.png", w_width * 0.5, w_heigth * 0.5, w_width, w_heigth, backgroundShader);
 };
