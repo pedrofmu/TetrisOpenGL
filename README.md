@@ -2,6 +2,8 @@
 
 This is a Tetris remake developed entirely from scratch using C++ and OpenGL in conjunction with GLFW.
 
+!(TetrisPreview)[./assets/preview.png]
+
 ## Getting Started
 
 To play the game, follow these simple steps:
@@ -30,10 +32,6 @@ To play the game, follow these simple steps:
 
 ### Running the Game
 
-Execute the following command to launch the game:
-
-```
-./TetrisOpenGL
-```
+Now execute `TetrisOpenGL` to play.
 
 Enjoy playing Tetris!
