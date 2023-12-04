@@ -2,7 +2,7 @@
 
 This is a Tetris remake developed entirely from scratch using C++ and OpenGL in conjunction with GLFW.
 
-!(TetrisPreview)[assets/preview.png]
+![TetrisPreview](assets/preview.png)
 
 ## Getting Started
 
